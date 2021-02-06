@@ -1,0 +1,69 @@
+// You have to put the general animation rule after the browser specific ones:
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// opacity in 0. in 2 seconds change the opacity to 1 using @keyframes fadein
+@mixin animation($animationType) {
+  -webkit-animation: $animationType; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: $animationType; /* Firefox < 16 */
+  -ms-animation: $animationType; /* Internet Explorer */
+  -o-animation: $animationType; /* Opera < 12.1 */
+  animation: $animationType;
+}
+
+// keep the last state
+@mixin animation-fill-mode($animationMode) {
+  -webkit-animation-fill-mode: $animationMode; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: $animationMode;
+  animation-fill-mode: $animationMode;
+}
+
+@mixin animation-delay($detail) {
+  -webkit-animation-delay: $detail;
+  -moz-animation-delay: $detail;
+  animation-delay: $detail;
+}
+
+.about-page {
+  .left-side {
+    margin-top: 10vh;
+    color: black;
+    text-align: left;
+  }
+
+  .fadein {
+    opacity: 0;
+
+    @include animation(fadein 2s);
+    @include animation-fill-mode(forwards);
+  }
+
+  .title {
+    @include animation-delay(0.7s);
+    font-size: 6.2rem;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    @include animation-delay(2.2s);
+    font-size: 5rem;
+  }
+
+  .subsubTitle {
+    @include animation-delay(3.6s);
+    font-size: 3rem;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
