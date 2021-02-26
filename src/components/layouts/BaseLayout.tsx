@@ -19,6 +19,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
       <Loading />
     ) : (
       <div
+        className="baselayout"
         style={{
           display: "flex",
           flexDirection: "column",

@@ -1,3 +1,8 @@
+.baselayout {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 .portfolio-new-layout {
   background-color: rgb(6, 178, 201);
 }
@@ -5,3 +10,9 @@
 //   display: flex;
 //   flex-direction: column;
 // }
+
+@media only screen and (max-width: 700px) {
+  .baselayout {
+    width: 100%;
+  }
+}
