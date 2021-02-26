@@ -1,0 +1,100 @@
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.masthead {
+  background: no-repeat center center;
+  background-color: #868e96;
+  flex-grow: 1;
+  //<img> or <video> , should be resized to fit its container.
+  object-fit: cover;
+  position: relative;
+  padding-bottom: 10rem;
+  // color: yellow;
+  @include background-cover;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #272921;
+    opacity: 0.5;
+  }
+  .page-heading,
+  .post-heading,
+  .site-heading {
+    padding: 20rem 0 15rem;
+    color: white;
+    @media only screen and (min-width: 768px) {
+      padding: 20rem 0;
+    }
+  }
+  .page-heading,
+  .site-heading {
+    text-align: center;
+    h1 {
+      font-size: 5rem;
+      margin-top: 0;
+      font-weight: 700;
+    }
+    .subheading {
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 1rem 0 0;
+    }
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 8rem;
+      }
+    }
+  }
+  .post-heading {
+    h1 {
+      font-size: 3.5rem;
+    }
+    .meta,
+    .subheading {
+      line-height: 1.1;
+      display: block;
+    }
+    .subheading {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin: 1rem 0 3rem;
+    }
+    .meta {
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+
+      a {
+        color: white;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 5.5rem;
+      }
+      .subheading {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+.react-icon-masthead {
+  margin-right: 4rem;
+  svg {
+    height: 4rem !important;
+    width: 4rem !important;
+    color: map-get($icon-colors, react);
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}

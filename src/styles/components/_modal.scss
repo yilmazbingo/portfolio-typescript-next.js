@@ -1,8 +1,12 @@
 .modall {
   position: fixed;
-  width: 90%;
-  left: 5%;
-  top: 20vh;
+  width: 40rem;
+  // left: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-size: 400% 400%;
+
+  top: 50vh;
   background: white;
   border-radius: 5px;
   z-index: 200; // I changed this to 999999 but didnot solve the issue
@@ -21,6 +25,7 @@
 
 .modal__content {
   padding: 1rem;
+  text-align: center;
 }
 
 .modal__actions {

@@ -1,0 +1,64 @@
+.slate-container {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.3rem;
+  background: #eee;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  blockquote {
+    border-left: 2px solid #ddd;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    color: #aaa;
+    font-style: italic;
+    span {
+      line-height: 1rem;
+    }
+  }
+  .css-fu1za2 {
+    background-color: white;
+    span {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+blockquote[dir="rtl"] {
+  border-left: none;
+  padding-left: 0;
+  border-right: 0rrem solid #ddd;
+}
+
+[data-slate-editor] > * + * {
+  margin-top: 1em;
+}
+
+.blog-initial {
+  margin-left: 3rem;
+  //   background-color: gray;
+  font-size: 1.2rem;
+
+  .blog-field {
+    display: flex;
+    flex-direction: column;
+    .group {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      height: 2.8rem;
+
+      label {
+        color: red;
+        font-weight: bold;
+      }
+      input {
+        width: 20rem;
+        height: 100%;
+        margin-left: 1rem;
+      }
+      select {
+        width: 20rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+}

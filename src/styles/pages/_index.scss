@@ -1,16 +1,4 @@
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-height: 70vh;
-}
-
-.cover.home {
-  // background-image: url("/images/background.png");
-  background-size: cover;
-  background-color: black;
-}
+// width:for page size is not necessary. width:vw Viewport is the rectangle area where things are visible to you. The document can be larger than that and you'll see scrollbars if so.
 .flipper {
   height: 100%;
   transition: 1s;
@@ -41,58 +29,29 @@
   transform: rotateY(180deg);
 }
 
-// .cover {
-//   background-image: linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
-//   overflow: hidden;
-//   position: relative;
-// }
-
-.wrapper {
-  min-height: 100vh;
-  min-width: 100vw;
-  margin-top: 0;
-  position: relative;
+.index-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.main-section {
-  top: 10rem;
-  width: 100%;
-  padding: 15rem 0 0;
-}
-
-.hero-section {
-  height: 60vh;
-  width: 40vw;
-  margin-bottom: 5rem;
-  // padding: 0 0;
-
-  h2 {
-    // color: rgb(177, 2, 2);
-    font-weight: 1000;
-    text-align: center;
-    font-family: GreatVibes;
-    letter-spacing: 0.2rem;
+section.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  .rotating-image {
+    height: 47%;
+    // height: calc(5rem + 20vmax);
+    // padding: calc(1rem + 2vw);
+    // height: calc(5rem + 20vmax);
+    justify-content: space-between;
+    width: 40rem;
+    // width: calc(15rem + 20vmax);
+    padding: 0 0;
+    // perspective: 100rem;
     color: white;
-  }
-
-  perspective: 100rem;
-  color: white;
-  width: 40rem;
-  position: relative;
-  &-frontend {
-    color: rgb(221, 119, 50);
-  }
-  &-backend {
-    color: rgb(15, 219, 42);
-  }
-  &-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 2rem;
-    z-index: 1;
-    text-align: center;
-    font-weight: bold;
+    position: relative;
   }
 }
 
@@ -105,31 +64,41 @@
 
 .image-1 {
   background-image: url("/images/frontend.jpeg");
+
   background-size: cover;
   border-radius: 50%;
   box-shadow: -17px 13px 41px rgba(13, 78, 158, 0.6);
-  border: 0.2rem solid #3bace5;
+  border: 0.2rem solid white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .frontend {
+    text-align: center;
+    // letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-family: PressStart2P;
+    color: rgb(255, 251, 7);
+  }
 }
 
 .image-2 {
   background-image: url("/images/backend.jpeg");
   background-size: cover;
   border-radius: 50%;
-  border: 0.2rem solid #3bace5;
+  border: 0.2rem solid white;
   box-shadow: -17px 13px 41px rgba(13, 78, 158, 0.3);
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .backend {
+    // letter-spacing: 0.3rem;
+    text-align: center;
+    font-family: PressStart2P;
+    color: rgb(255, 251, 7);
 
-// .hero-welcome-text > h1 {
-//   color: white;
-//   text-transform: uppercase;
-//   font-size: 27px;
-//   margin-top: 80px;
-//   font-weight: 300;
-// }
-
-.hero-welcome-wrapper {
-  justify-content: center;
-  border-radius: 50%;
+    text-transform: uppercase;
+  }
 }
 
 // .shadow-custom {

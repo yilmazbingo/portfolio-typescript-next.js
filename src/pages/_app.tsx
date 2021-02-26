@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "react-toastify/dist/ReactToastify.css";
 // import "slate-simple-editor/dist/index.css";
 import "@/styles/main.scss";
+
 // import "normalize.css/normalize.css";
 
 const App = ({ Component, pageProps }: AppProps) => (

@@ -1,24 +1,27 @@
 //env's in env.local are loaded server, env's here are loaded to client
 
 const path = require("path");
-const Dotenv = require("dotenv-webpack");
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-module.exports = {
-  // webpack: (config) => {
-  //   // this is natively supported by next .js now. in jsconfig.json
-  //   config.resolve.alias["@"] = path.resolve(__dirname, "src");
-  // },
+// import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
-  //   // e dont need env varible package anymore. next.js handles it
-  //   config.plugins.push(new Dotenv({ silent: true }));
-  //   return config;
-  // },
+module.exports = {
+  webpack: (config) => {
+    //   // this is natively supported by next .js now. in jsconfig.json
+    //   config.resolve.alias["@"] = path.resolve(__dirname, "src");
+    // },
+
+    // e dont need env varible package anymore. next.js handles it
+    // config.plugins.push(new MonacoWebpackPlugin());
+    return config;
+  },
   // this will pass the env variable to the client side
   // trailingSlash: true,
   env: {
     AUTH0_NAMESPACE: process.env.AUTH0_NAMESPACE,
     BASE_URL: process.env.BASE_URL,
     PORTFOLIO_API_URL: process.env.PORTFOLIO_API_URL,
+    EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
+    EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
+    EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
     // NODE_ENV: process.env.NODE_ENV,
     // AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     // AUTH0_CLIENT: process.env.AUTH0_CLIENT,

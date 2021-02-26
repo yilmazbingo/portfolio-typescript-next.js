@@ -1,9 +1,29 @@
 @import "./slate-container";
+// Shared
+@import "./shared/maps";
+@import "./shared/fonts";
+@import "./shared/baselayout";
 // Components
 @import "./components/header";
-@import "./components/socialmedialinks";
 @import "./components/backdrop";
 @import "./components/modal";
+@import "./components/sideNav";
+@import "./components/showcase";
+@import "./components/skills";
+@import "./components/contact_form";
+@import "./components/blog-topics";
+@import "./components/basepage";
+@import "./components/portfolio-form";
+@import "./components/blog-editor";
+@import "./components/floading-box-anime";
+@import "./components/loading";
+@import "./components/masthead";
+
+// Components/codepen
+@import "./components/codepen/code-editor";
+@import "./components/codepen/preview";
+@import "./components/codepen/resizable";
+@import "./components/codepen/syntax-highlighter";
 // Pages
 @import "./pages/index";
 @import "./pages/portfolios";
@@ -11,34 +31,22 @@
 @import "./pages/blogs";
 @import "./pages/about";
 
-@import "./shared/fonts";
 html,
 body {
   // height: 100%;
   // width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: 100vh;
-  width: 100vw;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  // display: flex;
+  // width: calc(100vw - (100vw - 100%));
   font-size: 62.5%;
   font-family: "Montserrat", "Helvetica" !important;
+  margin: 0;
+  padding: 0;
 }
 
 .clickable {
   cursor: pointer;
-}
-
-.base-page {
-  padding: 15rem 0;
-  color: black;
-  background-color: #ecedee;
-  min-height: 100vh;
-
-  .page-header-title {
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 2rem;
-  }
 }
 
 .absolute {
@@ -46,10 +54,16 @@ body {
 }
 
 .self-typed {
+  margin-left: auto;
+  margin-right: auto;
+  // padding-top: 10rem;
+  // margin-top: 10rem;
   font-size: 3rem;
-  color: rgb(177, 2, 2);
+  color: rgb(255, 251, 7);
+  font-family: PressStart2P;
   font-weight: bold;
-  letter-spacing: 0.2rem;
+  // letter-spacing: 0.2rem;
+  // background-color: black;
 }
 
 .avatar-box {
@@ -57,8 +71,14 @@ body {
     height: 5rem;
     border-radius: 50%;
   }
+  .title {
+    font-family: IndieFlower-Regular;
+  }
 
   .subtitle {
     font-size: 1.4rem;
   }
+}
+a {
+  text-decoration: none;
 }

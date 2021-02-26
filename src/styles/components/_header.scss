@@ -1,48 +1,52 @@
 // HEADER
 .port-navbar.port-default {
-  width: 100%;
+  // width: 100vw;
   z-index: 15;
-  padding: 4rem;
+  width: calc(6.5vw + 6.5vh);
+  padding: 3rem 3rem 3rem 8rem;
 
+  // width: 100%;
+  // padding: 4rem;
+  // margin-left: 4rem;
+  height: calc(3.5vw + 3.5vh);
+  // background-color: map-get($background-colors, header);
+
+  // if page does not pass NavClass, I want header to have bg color
   &.with-bg {
-    background-color: #2c3e50;
-    padding: 3rem;
+    background-color: map-get($background-colors, header);
+    width: 100%;
+    padding: 3rem 3rem 3rem 8rem;
   }
 
   .port-navbar {
-    &-brand {
-      color: white;
-
-      font-size: 2.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      font-weight: bold;
-      font-family: Alice;
-    }
-
     &-item {
-      margin-left: 1rem;
+      margin-left: 2rem;
       margin-right: 1rem;
+    }
+    &-auth {
+      margin-right: 8rem;
     }
 
     &-link {
-      color: rgb(193, 224, 13);
+      position: relative;
+      // color: rgb(193, 224, 13);
+      color: white;
       font-weight: bold;
       letter-spacing: 0.8px;
       font-size: 1.8rem;
       text-transform: uppercase;
 
       &.active {
-        color: rgb(228, 142, 30);
+        color: rgb(255, 251, 7);
       }
 
       &:hover,
       &:focus {
-        color: #c70b0b;
+        color: rgb(5, 230, 5);
       }
     }
   }
-
+  // dropdown navbar menu
   .port-dropdown-menu {
     .dropdown-item:active {
       background-color: #1c0cad;
@@ -63,11 +67,75 @@
     }
   }
 }
+.port-navbar-link.port-dropdown-menu.dropdown.show.nav-item {
+  div {
+    background-color: #4e4e4e;
+  }
+}
 
+// div.dropdown-menu.dropdown-menu-right.show {
+//   background-color: yellow !important;
+// }
+.dropdown-menu.dropdown-menu-right.show {
+  background-color: map-get($background-colors, dropdown-navbar) !important;
+  // color: purple;
+  color: red;
+}
+
+// this is not working somehow ?????
 .port-navbar.transparent.is-open {
-  background-color: #2c3e50;
+  background-color: map-get($background-colors, dropdown-navbar) !important;
+  flex: 1;
+}
+.collapse.show.navbar-collapse {
+  background-color: map-get($background-colors, dropdown-navbar);
+  // width: 50% !important;
+  .port-navbar-auth {
+    // originally Login has no margni-left but other items had margin-left:2rem
+    margin-left: 2rem !important;
+  }
 }
 
 .port-navbar.transparent.is-close {
   transition: 1s;
+}
+li a:link::before,
+li a:visited::before,
+li a:link::after,
+li a:visited::after {
+  content: "";
+  /* when position is absolute, parent should have position of relative. this position should have  a reference. if parent.position:relative, this position will take the parent as reference. we do position absolute becuase we want to specifically provide a position for our before or after elements. */
+  position: absolute;
+  left: 0;
+  /* container is the parent element which is anchor tag "a" */
+  width: 100%;
+  height: 0.25rem;
+  background-color: white;
+  /* they are there but they dont have any dimension */
+  transform: scaleX(0);
+  /* by default when you transform any element, it has transform.origin=center */
+  transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
+}
+
+/* when anchor is in link state, we grab before pseudo element which is a child of anchor element. */
+/* when working with pseudo elements first thing is providing content element */
+a:link::before,
+a:visited::before {
+  top: 0;
+  /* transform origin is center by default */
+  transform-origin: left;
+}
+
+li a:link::after,
+li a:visited::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+li a:hover::before,
+li a:active::before,
+li a:hover::after,
+li a:active::after {
+  /* by default all elements have scaleX(1) */
+  transform: scaleX(1);
 }

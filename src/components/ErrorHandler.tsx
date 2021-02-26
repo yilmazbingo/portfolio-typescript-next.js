@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
+import dynamic from "next/dynamic";
 
-import Backdrop from "./Backdrop";
-import Modal from "./Modal";
+const Backdrop = dynamic(() => import("./Backdrop"), { ssr: false });
+const Modal = dynamic(() => import("./Modal"), { ssr: false });
 
 interface ErrorHandlerProps {
   error?: any;

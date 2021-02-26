@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
-import BaseLayout from "@/components/layouts/BaseLayout";
-import BasePage from "@/components/BasePage";
-import Typed from "@/components/Typed";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
 import { useGetUser } from "@/actions/user";
+import BasePage from "@/components/BasePage";
+import ContactForm from "@/components/ContactForm";
+import BaseLayout from "@/components/layouts/BaseLayout";
+import ShowCase from "@/components/ShowCase";
+import Skills from "@/components/Skills";
+import Typed from "@/components/Typed";
+import React, { useEffect, useRef, useState } from "react";
+import FloadingBoxAnime from "@/components/FloadingBoxesAnim";
 
 const Index = () => {
   const [isFlipping, setIsFlipping] = useState(false);
@@ -18,54 +20,41 @@ const Index = () => {
 
   const startAnimation = () => {
     flipInterval.current = setInterval(() => {
-      // inside setInterval I have to pass callback to change state
       setIsFlipping((prevFlipping) => !prevFlipping);
     }, 10000);
   };
 
   return (
-    <BaseLayout
-      user={data}
-      loading={loading}
-      navClass="transparent"
-      className="home"
-    >
-      <BasePage indexPage title="Portfolio - Yilmaz Bingol">
-        <div className="main-section">
-          <Container>
-            <Row>
-              <Col
-                sm="11"
-                md={{ size: 6, offset: 3 }}
-                className="main-container"
-              >
-                <SocialMediaLinks />
-                <Typed />
-                <div className="hero-section">
-                  <div className={`flipper ${isFlipping ? "isFlipping" : ""}`}>
-                    {/* front of the image */}
-                    <div className="front">
-                      <div className="image image-1">
-                        <div className="hero-section-content">
-                          <h2 className="hero-section-frontend">Front End</h2>
-                        </div>
-                      </div>
-                    </div>
-                    {/* back of the image */}
-                    <div className="back">
-                      <div className="image image-2">
-                        <div className="hero-section-content">
-                          <h2 className="hero-section-backend"> Back End</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2> Software Engineer </h2>
+    <BaseLayout user={data} loading={loading} className="home">
+      {/* <FloadingBoxAnime /> */}
+      <BasePage
+        className="home"
+        indexPage
+        title="Portfolio - Yilmaz Bingol"
+        noWrapper
+      >
+        {/* <FloadingBoxAnime /> */}
+
+        <section className="hero-section">
+          <Typed />
+          <div className="rotating-image">
+            <div className={`flipper ${isFlipping ? "isFlipping" : ""}`}>
+              <div className="front">
+                <div className="image image-1">
+                  <h2 className="frontend">Front End</h2>
                 </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+              </div>
+              <div className="back">
+                <div className="image image-2">
+                  <h2 className="backend"> Back End</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ShowCase />
+        </section>
+        <Skills />
+        <ContactForm />
       </BasePage>
     </BaseLayout>
   );

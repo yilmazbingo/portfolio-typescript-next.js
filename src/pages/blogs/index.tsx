@@ -2,10 +2,11 @@ import BaseLayout from "@/components/layouts/BaseLayout";
 import BasePage from "@/components/BasePage";
 import { useGetUser } from "@/actions/user";
 import Masthead from "@/components/shared/Masthead";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
 import BlogItem from "@/components/BlogItem";
 import BlogApi from "@/lib/api/blogs";
 import { IBlog, IUserBlogs } from "../../types/interfaces/index";
+import BlogTopics from "@/components/BlogTopics";
 
 const Blogs: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data, loading } = useGetUser();
@@ -16,20 +17,20 @@ const Blogs: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
       user={data}
       loading={loading}
     >
-      <Masthead imagePath="/images/home-bg.jpg">
-        <h1>Fresh Blogs</h1>
-        <span className="subheading">Programming, travelling...</span>
-      </Masthead>
-      <BasePage title="Newest Blogs - YILMAZ BINGOL" className="blog-body">
-        <Row>
-          {blogs.map((blog) => (
-            <Col key={blog._id} md="10" lg="8" className="mx-auto">
-              <BlogItem blog={blog} />
-              <hr></hr>
-            </Col>
-          ))}
-        </Row>
-      </BasePage>
+      <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+        <Masthead imagePath="/images/home-bg.jpg" overlay>
+          <h1>Fresh Blogs</h1>
+          <span className="subheading">Programming</span>
+        </Masthead>
+        <BasePage
+          title="Newest Blogs - YILMAZ BINGOL"
+          className="blog-body"
+          noWrapper
+          metaDescription="javascript python blockchain react angular node.js database blogs"
+        >
+          <BlogTopics />
+        </BasePage>
+      </div>
     </BaseLayout>
   );
 };

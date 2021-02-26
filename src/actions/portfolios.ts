@@ -10,7 +10,6 @@ const updatePortfolio = (id: string, data: IPortfolio) =>
 const deletePortfolio = (id: string) =>
   axios.delete(`/api/v1/portfolios/${id}`);
 
-// this is like redux
 export const useCreatePortfolio = () => useApiHandler(createPortfolio);
 export const useUpdatePortfolio = () => useApiHandler(updatePortfolio);
 export const useDeletePortfolio = () => useApiHandler(deletePortfolio);

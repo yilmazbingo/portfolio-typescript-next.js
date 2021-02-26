@@ -11,7 +11,7 @@ interface PortfolioProps {
 }
 
 const Portfolio: React.FC<PortfolioProps> = ({ portfolio }) => {
-  const { data: dataU, loading: loadingU } = useGetUser();
+  const { data: dataU, loading } = useGetUser();
   const router = useRouter();
 
   if (router.isFallback) {
@@ -19,9 +19,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ portfolio }) => {
   }
 
   return (
-    <BaseLayout navClass="transparent" user={dataU} loading={loadingU}>
+    <BaseLayout navClass="transparent" user={dataU} loading={loading}>
       <BasePage
-        noWrapper
         indexPage
         title={`${portfolio.title} - YILMAZ BINGOL`}
         metaDescription={portfolio.description}
@@ -84,7 +83,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: Params }) {
   const json = await new PortfolioApi().getById(params.id);
   const portfolio = json.data;
-  return { props: { portfolio }, unstable_revalidate: 1 };
+  return { props: { portfolio }, revalidate: 1 };
 }
 
 type Params = { id: string };

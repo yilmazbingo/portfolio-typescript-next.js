@@ -32,11 +32,13 @@ interface PortfolioProps {
       }
   >;
   initialData?: Inputs;
+  submitButtonName?: string;
 }
 
 const PortfolioForm: React.FC<PortfolioProps> = ({
   onSubmit,
   initialData = {},
+  submitButtonName,
 }) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -71,75 +73,75 @@ const PortfolioForm: React.FC<PortfolioProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
+    <form onSubmit={handleSubmit(onSubmit)} className="portfolio-form">
+      <div className="group">
         <label htmlFor="title">Title</label>
         <input
           required
           ref={register}
           name="title"
           type="text"
-          className="form-control"
+          className="form-input"
           id="title"
         />
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="city">Company</label>
         <input
           ref={register}
           name="company"
           type="text"
-          className="form-control"
+          className="form-input"
           id="company"
         />
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="city">Company Website</label>
         <input
           ref={register}
           name="companyWebsite"
           type="text"
-          className="form-control"
+          className="form-input"
           id="companyWebsite"
         />
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="street">Location</label>
         <input
           ref={register}
           name="location"
           type="text"
-          className="form-control"
+          className="form-input"
           id="location"
         />
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="street">Job Title</label>
         <input
           ref={register}
           name="jobTitle"
           type="text"
-          className="form-control"
+          className="form-input"
           id="jobTitle"
         />
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="description">Description</label>
         <textarea
           ref={register}
           name="description"
-          rows={5}
-          className="form-control"
+          rows={4}
+          className="form-input"
           id="description"
         ></textarea>
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="startDate">Start Date</label>
         <div>
           <DatePicker
@@ -150,9 +152,9 @@ const PortfolioForm: React.FC<PortfolioProps> = ({
         </div>
       </div>
 
-      <div className="form-group">
+      <div className="group">
         <label htmlFor="endDate">End Date</label>
-        <div>
+        <div className="datepicker">
           <DatePicker
             disabled={!endDate}
             showYearDropdown
@@ -161,7 +163,7 @@ const PortfolioForm: React.FC<PortfolioProps> = ({
           />
         </div>
       </div>
-      <div className="form-group">
+      <div className="group">
         {endDate && (
           <button
             type="button"
@@ -173,6 +175,7 @@ const PortfolioForm: React.FC<PortfolioProps> = ({
         )}
         {!endDate && (
           <button
+            style={{ marginTop: "1rem" }}
             type="button"
             className="btn btn-success"
             // we need to return a callback function for onCLick
@@ -187,9 +190,9 @@ const PortfolioForm: React.FC<PortfolioProps> = ({
           </button>
         )}
       </div>
-      <button type="submit" className="btn btn-primary">
-        Create
-      </button>
+      <div>
+        <input type="submit" value={submitButtonName} className="form-input" />
+      </div>
     </form>
   );
 };

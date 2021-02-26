@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "reactstrap";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { Container } from "reactstrap";
 
 interface BasePage {
   noWrapper?: boolean;
@@ -14,35 +14,37 @@ interface BasePage {
 }
 
 const PageHeader: React.FC<{ header: string }> = ({ header }) => (
-  <div className="page-header">
-    <h1 className="page-header-title">{header}</h1>
-  </div>
+  // <div className="page-header">
+  <h1 className="page-header-title">{header}</h1>
+  // </div>
 );
-
 const BasePage: React.FC<BasePage> = (props) => {
   const router = useRouter();
   const {
-    noWrapper,
     indexPage,
+    noWrapper,
     className = "",
     header,
     title = "Portfolio - Yilmaz BINGOL",
-    metaDescription = "My name is Yilmaz BINGOL and I am an experienced software engineer and freelance developer. Throughout my career, I have acquired advanced technical knowledge and the ability to explain programming topics clearly and in detail to a broad audience.",
+    metaDescription = "Experienced software engineer and mathematician Yilmaz Bingol",
     canonicalPath,
     children,
   } = props;
+  const Wrapper = noWrapper ? React.Fragment : Container;
 
   const pageType = indexPage ? "index-page" : "base-page";
-  const Wrapper = noWrapper ? React.Fragment : Container;
   return (
     <>
       <Head>
         <title>{title}</title>
+        {/* mobile devices by default takes the content from desktop and squueze it. But we want it to be responsive */}
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        {/* First line of result when somoene searches your page */}
         <meta name="description" key="description" content={metaDescription} />
         <meta name="title" key="title" content={title} />
         <meta property="og:title" key="og:title" content={title} />
-        <meta property="og:locale" key="og:locale" content="en_EU" />
+        <meta property="og:locale" key="og:locale" content="en_US" />
+        <meta charSet="utf-8" />
         <meta
           property="og:url"
           key="og:url"
@@ -57,20 +59,27 @@ const BasePage: React.FC<BasePage> = (props) => {
         <meta
           property="og:image"
           key="og:image"
-          content={`${process.env.BASE_URL}/images/section-1.png`}
+          content={`${process.env.BASE_URL}/images/frontend.jpeg`}
         />
+
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         ></link>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2" />
+
         <link
           rel="canonical"
           href={`${process.env.BASE_URL}${
             canonicalPath ? canonicalPath : router.asPath
           }`}
         />
+        <script
+          src="https://kit.fontawesome.com/fbadad80a0.js"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
+
       <div className={`${pageType} ${className}`}>
         <Wrapper>
           {header && <PageHeader header={header} />}

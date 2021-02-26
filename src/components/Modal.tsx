@@ -5,8 +5,8 @@ import { Button } from "reactstrap";
 
 interface ModalProps {
   onCancelModal: () => void;
-  onAcceptModal: () => void;
-  acceptEnabled: boolean;
+  onAcceptModal?: () => void;
+  acceptEnabled?: boolean;
   isLoading?: boolean;
   title: string;
 }

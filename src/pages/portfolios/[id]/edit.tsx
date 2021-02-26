@@ -20,19 +20,16 @@ const PortfolioEdit = ({ user }: { user: IUser }) => {
   };
 
   return (
-    <BaseLayout user={user} loading={false}>
-      <BasePage header="Portfolio Edit">
-        <Row>
-          <Col md="8">
-            {initialData && (
-              <PortfolioForm
-                onSubmit={() => _updatePortfolio}
-                initialData={initialData}
-              />
-            )}
-            {error && <div className="alert alert-danger mt-2">{error}</div>}
-          </Col>
-        </Row>
+    <BaseLayout user={user} loading={false} className="portfolio-new-layout">
+      <BasePage header="Portfolio Edit" className="portfolio-new-page">
+        {initialData && (
+          <PortfolioForm
+            onSubmit={() => _updatePortfolio}
+            initialData={initialData}
+            submitButtonName="Edit Portfolio"
+          />
+        )}
+        {error && <div className="alert alert-danger mt-2">{error}</div>}
       </BasePage>
     </BaseLayout>
   );

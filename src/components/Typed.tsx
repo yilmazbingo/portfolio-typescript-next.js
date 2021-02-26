@@ -14,6 +14,7 @@ const TypedAnimation = () => {
     "Redux",
     "NgRx",
     "Webpack",
+    "EsBuild",
     "TypeScript",
     "GraphQL",
     "Python",
@@ -27,6 +28,7 @@ const TypedAnimation = () => {
     "Kubernetes",
     "AWS",
     "SCSS",
+    "SEO",
   ];
   return (
     <Typed

@@ -1,0 +1,121 @@
+.showcase {
+  /* calc() is used for dynamic values. 1 rem is the limit */
+  //   padding: calc(1rem + 2vw);
+  /* vmax takes into consideration whichever unit is the max. by default vw=1500,vh=700. if vw<700, vmax=700 */
+  // height: calc(5rem + 15vmax);
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* cubic bezier is animation timing function */
+  animation: hero 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  // clip-path: polygon(
+  //   20% 0,
+  //   80% 0%,
+  //   100% 20%,
+  //   100% 80%,
+  //   80% 100%,
+  //   20% 100%,
+  //   0% 80%,
+  //   0% 20%
+  // );
+  transition: filter 0.45s ease;
+  &:hover {
+    filter: sepia(80%);
+    // filter: brightness(80%);
+  }
+
+  &.name {
+    font-size: calc(2rem + 2vw);
+    color: white;
+    font-family: Lobster-Regular;
+  }
+  &.title {
+    font-size: calc(1.5rem + 1.5vw);
+    // font-size: calc(2rem + 3vw);
+    font-family: Lobster-Regular;
+    color: white;
+    text-align: center;
+  }
+  &.showcase.link:link,
+  &.link:visited {
+    padding: 1rem 0;
+    transition: all 0.5s ease-in-out;
+    width: 9rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    // height: 3rem;
+    letter-spacing: 0.2rem;
+    /* if you see position:relative, it means something inside will be absolute */
+    position: relative;
+    color: red;
+    z-index: 1;
+  }
+  &.link:link::after,
+  &.link:visited::after {
+    content: "";
+    position: absolute;
+    /* top and left relative to parent element. otherwise it would be relative to html */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: -1;
+  }
+  &.link:hover::after,
+  &.link:active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes hero {
+  0% {
+    transform: translateX(100rem) rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+// .showcase.link:link,
+// .showcase.link:visited {
+//   padding: 1rem 0;
+//   transition: all 0.5s ease-in-out;
+//   width: 9rem;
+//   text-transform: uppercase;
+//   font-size: 1.5rem;
+//   font-weight: 600;
+//   letter-spacing: 0.2rem;
+//   /* if you see position:relative, it means something inside will be absolute */
+//   position: relative;
+//   color: red;
+
+//   z-index: 1;
+// }
+// .showcase.link:link::after,
+// .showcase.link:visited::after {
+//   content: "";
+//   position: absolute;
+//   /* top and left relative to parent element. otherwise it would be relative to html */
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+//   background-color: var(--primary-color);
+//   transform: scaleX(0);
+//   transform-origin: right;
+//   transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+//   z-index: -1;
+// }
+// .showcase.link:hover::after,
+// .showcase.link:active::after {
+//   transform: scaleX(1);
+//   transform-origin: left;
+// }

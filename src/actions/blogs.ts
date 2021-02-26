@@ -18,6 +18,11 @@ export const useGetBlog = (id: string) => {
   return { data, error, loading: !data && !error, ...rest };
 };
 
+export const useGetBlogByField = (field: string) => {
+  const { data, error, ...rest } = useSWR(`/api/v1/blogs/${field}`, fetcher);
+  return { data, error, loading: !data && !error, ...rest };
+};
+
 export const useGetUserBlogs = () => {
   const { data, error, ...rest } = useSWR(`/api/v1/blogs/me`, fetcher);
   return { data, error, loading: !data && !error, ...rest };

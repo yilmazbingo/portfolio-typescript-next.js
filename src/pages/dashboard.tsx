@@ -68,28 +68,35 @@ const Dashboard: React.FC<DashboardProps> = ({ user, loading }) => {
   );
 
   return (
-    <BaseLayout navClass="transparent" user={user} loading={loading}>
-      <Masthead imagePath="/images/home-bg.jpg">
-        <h1>Blogs Dashboard</h1>
-        <span className="subheading">
-          Let's write some nice blog today{" "}
-          <Link href="/blogs/editor">
-            <Button color="primary">Create a new Blog</Button>
-          </Link>
-        </span>
-      </Masthead>
-      <BasePage className="blog-user-page">
-        <Row>
-          <Col md="6" className="mx-auto text-center">
-            <h2 className="blog-status-title"> Published Blogs </h2>
-            {renderBlogs(blogs, "published")}
-          </Col>
-          <Col md="6" className="mx-auto text-center">
-            <h2 className="blog-status-title"> Draft Blogs </h2>
-            {renderBlogs(blogs, "draft")}
-          </Col>
-        </Row>
-      </BasePage>
+    <BaseLayout
+      navClass="transparent"
+      user={user}
+      loading={loading}
+      className="dashboard-layout"
+    >
+      <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+        <Masthead imagePath="/images/home-bg.jpg">
+          <h1>Blogs Dashboard</h1>
+          <span className="subheading">
+            Let's write some nice blog today{" "}
+            <Link href="/blogs/editor">
+              <Button color="primary">Create a new Blog</Button>
+            </Link>
+          </span>
+        </Masthead>
+        <BasePage className="blog-dashboard-page">
+          <Row>
+            <Col md="6" className="mx-auto text-center">
+              <h2 className="blog-status-title"> Published Blogs </h2>
+              {renderBlogs(blogs, "published")}
+            </Col>
+            <Col md="6" className="mx-auto text-center">
+              <h2 className="blog-status-title"> Draft Blogs </h2>
+              {renderBlogs(blogs, "draft")}
+            </Col>
+          </Row>
+        </BasePage>
+      </div>
     </BaseLayout>
   );
 };

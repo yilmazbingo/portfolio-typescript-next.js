@@ -20,15 +20,13 @@ const Header: React.FC<HeaderProps> = ({ user, loading, className }) => {
     // handlewidth automatically detects the width of the screen. {width} is the current width
     <ReactResizeDetector handleWidth>
       {({ width }: { width: number }) => (
-        // width<760 will be detected by ReactResizeDetector
         <Navbar
-          className={`port-navbar port-default absolute ${className} ${
-            width < 768 && isOpen ? "is-open" : "is-close"
+          className={`port-navbar port-default absolute transparent ${className} ${
+            width < 780 && isOpen ? "is-open" : "is-close"
           }`}
           dark
           expand="md"
         >
-          <BsNavBrand />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -45,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ user, loading, className }) => {
                 <BsNavLink href="/blogs" title="Blogs" />
               </NavItem>
               <NavItem className="port-navbar-item">
-                <BsNavLink href="/cv" title="Cv" />
+                <BsNavLink href="/codepen" title="Codepen" />
               </NavItem>
               {/* <NavItem className="port-navbar-item">
                 <BsNavLink href="/secret" title="Secret" />
@@ -66,13 +64,13 @@ const Header: React.FC<HeaderProps> = ({ user, loading, className }) => {
                   {user && (
                     <>
                       {isAuthorized(user, "admin") && <AdminMenu />}
-                      <NavItem className="port-navbar-item">
+                      <NavItem className="port-navbar-auth">
                         <LogoutLink />
                       </NavItem>
                     </>
                   )}
                   {!user && (
-                    <NavItem className="port-navbar-item">
+                    <NavItem className="port-navbar-auth">
                       <LoginLink />
                     </NavItem>
                   )}

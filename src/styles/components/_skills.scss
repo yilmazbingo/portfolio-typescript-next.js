@@ -1,0 +1,158 @@
+section#skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: calc(1rem + 2vw);
+  background-color: map-get($background-colors, skills);
+}
+
+.skills__coding {
+  padding: calc(1rem + 2vw);
+  flex-basis: 40rem;
+  flex-grow: 1;
+  &.title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: white;
+    font-family: Montserrat-Italic;
+    text-decoration: underline;
+  }
+}
+
+.skills__coding h4 {
+  font-size: 2rem;
+  color: white;
+}
+
+.skills__coding--progress {
+  position: relative;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 3rem;
+  background-color: black;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.skills__coding--progress span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 2rem;
+  border-radius: 1rem 0 0 1rem;
+  background-color: rgb(255, 251, 7);
+}
+
+.skills__coding--progress__html {
+  animation: coding-1 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-1 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 95%;
+  }
+}
+
+.skills__coding--progress__js {
+  animation: coding-2 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-2 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 95%;
+  }
+}
+
+.skills__coding--progress__react {
+  animation: coding-3 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-3 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 95%;
+  }
+}
+
+.skills__coding--progress__angular {
+  animation: coding-4 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-4 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+// ---------------------------- BACKEND SKILLS--------------
+
+.skills__coding--progress__node {
+  animation: coding-node 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-node {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 95%;
+  }
+}
+.skills__coding--progress__python {
+  animation: coding-python 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-python {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+.skills__coding--progress__graphql {
+  animation: coding-graphql 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-graphql {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+.skills__coding--progress__db {
+  animation: coding-db 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-db {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}

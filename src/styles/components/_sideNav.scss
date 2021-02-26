@@ -1,0 +1,86 @@
+.side-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  width: calc(3.5vw + 3.5vh);
+  &.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background-color: rgb(7, 55, 119);
+    background-color: map-get($background-colors, side-nav);
+    &.logo {
+      img {
+        width: calc(3.5vw + 3.5vh);
+        object-fit: cover;
+      }
+    }
+    &.icons {
+      // object-fit: cover;
+      left: 0;
+      bottom: 2.2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      &.github {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          background-color: map-get($icon-bg-colors, github);
+          color: map-get($icon-colors, github);
+          border-radius: 50%;
+          &:hover {
+            color: black;
+            background-color: white;
+          }
+        }
+      }
+      &.linkedin {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          background-color: map-get($icon-bg-colors, linkedin);
+          color: map-get($icon-colors, linkedin);
+          border-radius: 10%;
+          &:hover {
+            color: rgb(25, 25, 109);
+          }
+        }
+      }
+
+      &.stackoverflow {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          // color: rgb(235, 152, 0);
+          color: map-get($icon-colors, stackoverflow);
+          &:hover {
+            background-color: white;
+          }
+          &:active {
+            color: red;
+          }
+        }
+      }
+      &.twitter {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          // color: rgb(235, 152, 0);
+          color: map-get($icon-colors, twitter);
+          &:hover {
+            background-color: white;
+          }
+          &:active {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

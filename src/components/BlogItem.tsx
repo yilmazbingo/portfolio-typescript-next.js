@@ -13,8 +13,7 @@ const BlogItem: React.FC<{ blog: IBlog }> = ({ blog }) => (
       </Link>
       <p className="post-meta">
         Posted by
-        <a href="#"> {blog.author.name} </a>-{" "}
-        {moment(blog.createdAt).format("LLLL")}
+        <a href="#"> {blog.author} </a>- {moment(blog.createdAt).format("LLLL")}
         {/* {blog.createdAt} */}
         {/* {blog.createdAt.split('T')[0].split("-").join(":")} */}
       </p>

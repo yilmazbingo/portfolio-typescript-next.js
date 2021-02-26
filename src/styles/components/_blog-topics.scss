@@ -1,0 +1,130 @@
+section#services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6rem 2rem 2rem;
+  background-color: map-get($background-colors, blog-topics);
+}
+
+.service {
+  padding: 4rem;
+  display: flex;
+  margin: 0 2rem 4rem;
+  //flex-basis has priority.  It sets the size of the content box unless otherwise set with box-sizing.
+  flex-basis: 40rem;
+  flex-grow: 1;
+  background-color: gray;
+  border-bottom: 0.2rem solid gray;
+  border-right: 0.2rem solid gray;
+  border-left: 0.2rem solid gray;
+  color: white;
+  font-family: Lobster-Regular;
+  position: relative;
+  //   so this will be always on top of the ::after content
+  z-index: 1;
+  .react-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: map-get($icon-colors, react);
+      animation-name: spin;
+      animation-duration: 5000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+  .node-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: green;
+    }
+  }
+
+  .js-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: map-get($icon-colors, js);
+    }
+  }
+  .py-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: map-get($icon-colors, py);
+      background-color: map-get($icon-bg-colors, py);
+    }
+  }
+  .blockchain-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: map-get($icon-colors, blockchain);
+      background-color: map-get($icon-bg-colors, blockchain);
+    }
+  }
+  .angular-icon {
+    margin-right: 4rem;
+    svg {
+      height: 4rem !important;
+      width: 4rem !important;
+      color: map-get($icon-colors, angular);
+      background-color: map-get($icon-bg-colors, angular);
+    }
+  }
+}
+// ##################   WINDOW EFFECT
+// transform-origin:center is the default
+.service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #014d4e;
+  //   initially I dont want any transition. only when hovered
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(1, 0, 0, 1);
+  z-index: -1;
+}
+
+.service:hover::after,
+.service:active::after {
+  transform: scaleX(1);
+}
+
+.services--title {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+// .service i {
+//   color: white;
+// }
+
+.services--title {
+  text-transform: uppercase;
+}
+
+// .services--para {
+//   font-family: "Indie Flower", cursive;
+//   font-size: 2rem;
+//   color: white;
+// }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

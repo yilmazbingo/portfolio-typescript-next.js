@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface State {
-  error: null | Error;
+  error: any;
   data: any;
   loading: boolean;
 }
@@ -30,11 +30,9 @@ export function useApiHandler(apiCall: Function) {
     try {
       const res = await apiCall(...data);
       setReqState({ error: null, data: res.data, loading: false });
-      // alert(res.data);
       console.log("response from creating portfolio", res.data);
       return res.data;
     } catch (e) {
-      // short circuting in or. if first expression is true, we dont evaluate the second.
       const message =
         (e.response && e.response.data) || "Ooops, something went wrong...";
       setReqState({ error: message, data: null, loading: false });

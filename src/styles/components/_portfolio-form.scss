@@ -1,0 +1,95 @@
+//sass variable
+$sub-color: grey;
+$main-color: black;
+
+@mixin shrinkLabel {
+  top: -1.4rem;
+  font-size: 1.2rem;
+  color: $main-color;
+}
+.portfolio-form {
+  width: 60rem;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   margin-left: 3rem;
+  background-color: black;
+  input[type="text"] {
+    padding-left: 1rem;
+  }
+  .group {
+    position: relative;
+    width: 60rem;
+
+    //   margin: 1rem 0;
+    label {
+      margin-top: 0.1rem;
+      color: rgb(252, 20, 4);
+      font-size: 1.4rem;
+      font-weight: bold;
+      //   position: absolute;
+      pointer-events: none;
+      margin-left: 1rem;
+      //   top: 1rem;
+      transition: 300ms ease all;
+
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+
+    .form-input {
+      background: none;
+      //   background-color: rgb(109, 15, 15);
+      color: white;
+      font-size: 1.6rem;
+      //   padding: 1rem 1rem 1rem 5rem;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 0.1rem solid $sub-color;
+      //   margin: 0.1rem 0;
+
+      &:focus {
+        outline-color: rgb(48, 228, 219);
+        // background-color: yellow;
+      }
+
+      //~ Sign:
+      //It is general sibling combinator and similar to Adjacent sibling combinator. the difference is that the second selector does NOT have to immediately follow the first one means It will select all elements that is preceded by the former selector.
+      //whenever browsser focus on form input
+      &:focus ~ .form-input-label {
+        @include shrinkLabel();
+      }
+    }
+  }
+  input[type="submit"] {
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: black;
+    background-color: white;
+    width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    transition: transform 0.35s ease-in-out;
+    margin-bottom: 0.5rem;
+    &:hover {
+      color: white;
+      background-color: black;
+      transform: scale(1.25);
+    }
+  }
+}
+
+.react-datepicker__input-container {
+  height: 1.6rem;
+
+  input {
+    width: 25rem !important;
+  }
+}

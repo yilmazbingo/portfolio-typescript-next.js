@@ -15,6 +15,6 @@ app.prepare().then(() => {
   const PORT = process.env.PORT || 3000;
   server.listen(PORT, () => {
     console.log(`> Ready on port ${PORT}`);
-    console.log("process versions", process.versions);
+    // console.log("process versions", process.versions);
   });
 });

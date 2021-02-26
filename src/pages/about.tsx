@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import BaseLayout from "@/components/layouts/BaseLayout";
 import BasePage from "@/components/BasePage";
 import { useGetUser } from "@/actions/user";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
 import ErrorHandler from "@/components/ErrorHandler";
 
 declare global {
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-const About = () => {
+const AboutMe = () => {
   const { data, loading } = useGetUser();
 
   // when user first come to this page, we start the animation but second time it navigates here, we should not do animation again. we set __isAboutLoaded in global object when navigate away from the page
@@ -33,7 +33,7 @@ const About = () => {
 
   return (
     <BaseLayout user={data} loading={loading}>
-      <BasePage title="About Me - YILMAZ BINGOL" className="about-page">
+      <BasePage title="About - YILMAZ BINGOL" className="about-page">
         <Row className="mt-5">
           {/* <ErrorHandler error={error} onHandle={onHandle}></ErrorHandler> */}
           <Col md="6">
@@ -76,4 +76,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutMe;
