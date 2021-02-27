@@ -17,7 +17,7 @@ const Blogs: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
       user={data}
       loading={loading}
     >
-      <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <Masthead imagePath="/images/home-bg.jpg" overlay>
           <h1>Fresh Blogs</h1>
           <span className="subheading">Programming</span>

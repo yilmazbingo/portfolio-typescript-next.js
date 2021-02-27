@@ -1,3 +1,17 @@
+.home-layout {
+  background-color: black;
+  background-size: cover;
+  position: relative;
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  // since this is unitless it is considered to be flex-grow
+  // margin-top: 6rem;
+  // height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+}
+
 // width:for page size is not necessary. width:vw Viewport is the rectangle area where things are visible to you. The document can be larger than that and you'll see scrollbars if so.
 .flipper {
   height: 100%;
@@ -27,11 +41,6 @@
 
 .back {
   transform: rotateY(180deg);
-}
-
-.index-container {
-  display: flex;
-  flex-direction: column;
 }
 
 section.hero-section {

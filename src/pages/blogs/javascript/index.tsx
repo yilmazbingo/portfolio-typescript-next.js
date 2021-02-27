@@ -18,17 +18,17 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
       loading={loading}
       user={userData}
     >
-      <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-        <Masthead imagePath="/images/js.png">
-          <h1>World of Javacript</h1>
-          <span className="subheading">Javacriptism</span>
-        </Masthead>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <BasePage
           title="Javascript Blogs - YILMAZ BINGOL"
           className="blog-body"
           noWrapper
           metaDescription="javascript blogs"
         >
+          <Masthead backgroundColor="#f0db4f">
+            <h1>World of Javacript</h1>
+            <span className="subheading">Javacriptism</span>
+          </Masthead>
           {blogs &&
             blogs.map((blog: IBlog) => <BlogItem blog={blog} key={blog._id} />)}
         </BasePage>

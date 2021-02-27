@@ -1,26 +1,22 @@
 import { Container, Row, Button } from "reactstrap";
 import Link from "next/link";
 
-const Masthead: React.FC<{ imagePath?: string; overlay?: true }> = ({
-  children,
-  imagePath,
-  overlay,
-}) => (
+const Masthead: React.FC<{
+  imagePath?: string;
+  overlay?: true;
+  backgroundColor?: string;
+}> = ({ children, imagePath, overlay, backgroundColor }) => (
   <div
     className="masthead"
     style={{
       backgroundImage: `url(${imagePath})`,
+      backgroundColor: `${backgroundColor}`,
     }}
   >
     {/* this makes the image look  */}
     {overlay && <div className="overlay"></div>}
-    <Container>
-      <Row>
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="site-heading">{children}</div>
-        </div>
-      </Row>
-    </Container>
+
+    <div className="site-heading">{children}</div>
   </div>
 );
 

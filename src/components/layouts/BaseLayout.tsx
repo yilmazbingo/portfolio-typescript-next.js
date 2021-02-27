@@ -13,27 +13,27 @@ interface BaseLayoutProps {
 }
 const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
   const { className, user, navClass = "with-bg", loading, children } = props;
-  // display:flex will keep sideBar and main side by side
   const renderer = () =>
     loading ? (
       <Loading />
     ) : (
-      <div
-        className="baselayout"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-        }}
-      >
-        <Header className={navClass} user={user} loading={loading} />
-        {/* this will kepp sidenav and page side by side */}
-        <main style={{ display: "flex" }} className={className}>
-          <SideBar />
+      <div className="baselayout">
+        <SideBar />
+
+        <main
+          className={className}
+          style={{
+            display: "flex",
+            flex: "1",
+            flexDirection: "column",
+            position: "relative",
+          }}
+        >
+          <Header className={navClass} user={user} loading={loading} />
 
           {children}
+          <Copyright />
         </main>
-        <Copyright />
         <ToastContainer />
       </div>
     );
@@ -41,6 +41,3 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
 };
 
 export default BaseLayout;
-
-/* <style jsx>``</style> */
-// inline styling. style={{camelCase:""}}

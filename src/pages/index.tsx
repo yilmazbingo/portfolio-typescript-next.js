@@ -25,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <BaseLayout user={data} loading={loading} className="home">
+    <BaseLayout user={data} loading={loading} className="home-layout">
       {/* <FloadingBoxAnime /> */}
       <BasePage
         className="home"

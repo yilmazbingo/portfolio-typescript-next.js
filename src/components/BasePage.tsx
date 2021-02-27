@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Header from "./shared/Header";
 import { useRouter } from "next/router";
 import { Container } from "reactstrap";
 
@@ -80,7 +81,12 @@ const BasePage: React.FC<BasePage> = (props) => {
         ></script>
       </Head>
 
-      <div className={`${pageType} ${className}`}>
+      <div
+        className={`${pageType} ${className}`}
+        style={{ display: "flex", flexDirection: "column", flex: "1" }}
+      >
+        {/* <Header /> */}
+
         <Wrapper>
           {header && <PageHeader header={header} />}
           {children}

@@ -1,7 +1,8 @@
 .baselayout {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   position: relative;
+  // flex: 1;
 }
 .portfolio-new-layout {
   background-color: rgb(6, 178, 201);

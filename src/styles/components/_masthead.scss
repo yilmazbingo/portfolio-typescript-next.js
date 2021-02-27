@@ -7,11 +7,13 @@
 .masthead {
   background: no-repeat center center;
   background-color: #868e96;
-  flex-grow: 1;
-  //<img> or <video> , should be resized to fit its container.
-  object-fit: cover;
+  height: 30rem;
+  //<img> or <video> , should be resized to fit its container. not for background-image
+  // object-fit: cover;
   position: relative;
   padding-bottom: 10rem;
+  overflow: hidden;
+  background-size: contain;
   // color: yellow;
   @include background-cover;
   .overlay {
@@ -23,17 +25,17 @@
     background-color: #272921;
     opacity: 0.5;
   }
-  .page-heading,
-  .post-heading,
+  // .site-heading {
+  //   // padding: 20rem 0 15rem;
+  //   color: white;
+  //   @media only screen and (min-width: 768px) {
+  //     padding: 20rem 0;
+  //   }
+  // }
   .site-heading {
-    padding: 20rem 0 15rem;
-    color: white;
-    @media only screen and (min-width: 768px) {
-      padding: 20rem 0;
-    }
-  }
-  .page-heading,
-  .site-heading {
+    padding: 8rem 0 15rem;
+    color: black;
+
     text-align: center;
     h1 {
       font-size: 5rem;
@@ -50,38 +52,6 @@
     @media only screen and (min-width: 768px) {
       h1 {
         font-size: 8rem;
-      }
-    }
-  }
-  .post-heading {
-    h1 {
-      font-size: 3.5rem;
-    }
-    .meta,
-    .subheading {
-      line-height: 1.1;
-      display: block;
-    }
-    .subheading {
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin: 1rem 0 3rem;
-    }
-    .meta {
-      font-size: 2rem;
-      font-weight: 300;
-      font-style: italic;
-
-      a {
-        color: white;
-      }
-    }
-    @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 5.5rem;
-      }
-      .subheading {
-        font-size: 3rem;
       }
     }
   }

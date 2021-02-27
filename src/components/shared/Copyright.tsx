@@ -4,7 +4,14 @@ import { FaRegCopyright } from "react-icons/fa";
 const Copyright = () => {
   return (
     <div
-      style={{ backgroundColor: "black", textAlign: "center", color: "white" }}
+      style={{
+        backgroundColor: "black",
+        textAlign: "center",
+        color: "white",
+        bottom: "0",
+        position: "absolute",
+        width: "100%",
+      }}
     >
       <h3>
         Copyrigth{" "}

@@ -18,8 +18,8 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
     >
       <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
         <Masthead imagePath="/images/angular.png">
-          <h1>World of Angular</h1>
-          <span className="subheading">Angularizm</span>
+          {/* <h1>World of Angular</h1> */}
+          {/* <span className="subheading">Angularizm</span> */}
         </Masthead>
         <BasePage
           title="Python Blogs - YILMAZ BINGOL"
