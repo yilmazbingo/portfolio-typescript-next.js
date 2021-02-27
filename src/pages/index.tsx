@@ -1,3 +1,5 @@
+import React, { useEffect, useRef, useState, RefObject } from "react";
+import { useResizeDetector } from "react-resize-detector";
 import { useGetUser } from "@/actions/user";
 import BasePage from "@/components/BasePage";
 import ContactForm from "@/components/ContactForm";
@@ -5,7 +7,6 @@ import BaseLayout from "@/components/layouts/BaseLayout";
 import ShowCase from "@/components/ShowCase";
 import Skills from "@/components/Skills";
 import Typed from "@/components/Typed";
-import React, { useEffect, useRef, useState } from "react";
 import FloadingBoxAnime from "@/components/FloadingBoxesAnim";
 
 const Index = () => {
@@ -23,7 +24,8 @@ const Index = () => {
       setIsFlipping((prevFlipping) => !prevFlipping);
     }, 10000);
   };
-
+  const { width, height, ref } = useResizeDetector();
+  console.log("width", width);
   return (
     <BaseLayout user={data} loading={loading} className="home-layout">
       {/* <FloadingBoxAnime /> */}
@@ -35,7 +37,17 @@ const Index = () => {
       >
         {/* <FloadingBoxAnime /> */}
 
-        <section className="hero-section">
+        <section
+          className="hero-section"
+          ref={
+            ref as
+              | string
+              | ((instance: HTMLElement | null) => void)
+              | RefObject<HTMLElement>
+              | null
+              | undefined
+          }
+        >
           <Typed />
           <div className="rotating-image">
             <div className={`flipper ${isFlipping ? "isFlipping" : ""}`}>

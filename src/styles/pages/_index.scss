@@ -1,6 +1,5 @@
 .home-layout {
   background-color: black;
-  background-attachment: fixed;
 
   background-size: cover;
   position: relative;
@@ -45,6 +44,10 @@
 }
 
 section.hero-section {
+  background-image: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -88,6 +91,7 @@ section.hero-section {
     // letter-spacing: 0.3rem;
     text-transform: uppercase;
     color: rgb(255, 251, 7);
+    font-family: PressStart2P !important;
   }
 }
 
@@ -104,7 +108,7 @@ section.hero-section {
     // letter-spacing: 0.3rem;
     text-align: center;
     color: rgb(255, 251, 7);
-
+    font-family: PressStart2P !important;
     text-transform: uppercase;
   }
 }
@@ -130,5 +134,11 @@ section.hero-section {
 @media only screen and (max-width: 600px) {
   .rotating-image {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  section.hero-section {
+    background-image: none;
   }
 }

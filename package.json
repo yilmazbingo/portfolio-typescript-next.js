@@ -42,7 +42,7 @@
     "react-icons": "^3.11.0",
     "react-redux": "^7.2.1",
     "react-resizable": "^1.11.0",
-    "react-resize-detector": "^5.2.0",
+    "react-resize-detector": "^6.6.0",
     "react-toastify": "^6.0.8",
     "react-typed": "^1.2.0",
     "reactstrap": "^8.6.0",

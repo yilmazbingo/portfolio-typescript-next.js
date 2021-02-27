@@ -13,14 +13,14 @@ const Copyright = () => {
         width: "100%",
       }}
     >
-      <h3>
+      <h4>
         Copyrigth{" "}
         <span>
           {" "}
           <FaRegCopyright />
         </span>{" "}
         Yilmaz Bingol. All rights reserved
-      </h3>
+      </h4>
     </div>
   );
 };
