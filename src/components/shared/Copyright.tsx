@@ -19,7 +19,7 @@ const Copyright = () => {
           {" "}
           <FaRegCopyright />
         </span>{" "}
-        Yilmaz Bingol. All rights reserved.{" "}
+        Yilmaz Bingol. All rights reserved
       </h3>
     </div>
   );
