@@ -1,0 +1,34 @@
+.speech {
+  position: relative;
+  margin-left: 50rem;
+  color: rgb(248, 187, 19);
+  box-shadow: chocolate;
+  padding: 2rem;
+  background-color: rgb(52, 110, 235);
+  max-width: 40rem;
+  text-align: center;
+  border-radius: 2rem;
+  border-color: brown;
+}
+.speech::before {
+  position: absolute;
+  bottom: -2rem;
+  left: 80%;
+  content: "";
+  border: 2rem solid transparent;
+  border-top-color: brown;
+  border-bottom: 0;
+}
+
+.speech::after {
+  position: absolute;
+  top: -4rem;
+  right: 80%;
+  content: "";
+  border: 2rem solid transparent;
+  //   border-radius: 2rem;
+
+  border-bottom: 2rem solid transparent;
+  //   border-top-color: green;
+  border-bottom-color: brown;
+}
