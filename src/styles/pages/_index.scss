@@ -1,5 +1,7 @@
 .home-layout {
   background-color: black;
+  background-attachment: fixed;
+
   background-size: cover;
   position: relative;
   flex: 1;
@@ -9,7 +11,6 @@
   padding-top: 6rem;
   // height: 100vh;
   width: 100%;
-  background-attachment: fixed;
 }
 
 // width:for page size is not necessary. width:vw Viewport is the rectangle area where things are visible to you. The document can be larger than that and you'll see scrollbars if so.
