@@ -37,13 +37,19 @@ const ReadOnlyView: React.FC<SlateViewProps> = ({ initialContent }) => {
   }, [initialContent]);
 
   return (
-    <Slate editor={editor} value={value} onChange={(value) => setValue(value)}>
-      <Editable
-        readOnly
-        renderElement={renderElement}
-        renderLeaf={renderLeaf}
-      />
-    </Slate>
+    <div>
+      <Slate
+        editor={editor}
+        value={value}
+        onChange={(value) => setValue(value)}
+      >
+        <Editable
+          readOnly
+          renderElement={renderElement}
+          renderLeaf={renderLeaf}
+        />
+      </Slate>
+    </div>
   );
 };
 

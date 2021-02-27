@@ -12,22 +12,27 @@
   background-color: map-get($background-colors, blog-listing-page);
 
   .blog-body {
-    padding: 5rem 0 0 0;
+    padding: 3rem 2rem 0 2rem;
   }
 
   .post-preview {
+    background-color: gray;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    margin-right: 4rem;
     > a {
-      color: #212529;
+      color: #750b0b;
       &:focus,
       &:hover {
         text-decoration: none;
-        color: #18bc9c;
+        color: #03e8f8;
       }
       > .post-title {
         font-size: 3rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
       }
       > .post-subtitle {
         font-weight: 300;
@@ -40,14 +45,14 @@
       font-size: 1.8rem;
       font-style: italic;
       margin-top: 0;
-      color: #868e96;
+      color: white;
       > a {
         text-decoration: none;
         color: #212529;
         &:focus,
         &:hover {
           text-decoration: underline;
-          color: #18bc9c;
+          color: #03e8f8;
         }
       }
     }

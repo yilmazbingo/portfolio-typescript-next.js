@@ -36,7 +36,7 @@ const Portfolios: React.FC<PortfoliosProps> = ({
   return (
     <BaseLayout user={dataU} loading={loadingU}>
       <BasePage
-        title="Newest Portfolios - YIlMAZ BINGOL"
+        title="Newest tech Portfolios - YIlMAZ BINGOL"
         header="Portfolios"
         className="portfolio-page"
       >

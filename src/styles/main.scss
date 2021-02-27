@@ -49,9 +49,8 @@ body {
 .clickable {
   cursor: pointer;
 }
-
-.absolute {
-  position: absolute;
+.contaner {
+  margin: 0;
 }
 
 .self-typed {
@@ -62,7 +61,7 @@ body {
   // margin-top: 10rem;
   font-size: 3rem;
   color: #04c404;
-  font-family: PressStart2P !important;
+  font-family: "PressStart2P" !important;
   font-weight: bold;
   // letter-spacing: 0.2rem;
   background-color: black;

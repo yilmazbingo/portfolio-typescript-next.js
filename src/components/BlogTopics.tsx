@@ -25,14 +25,12 @@ const BlogTopics = () => {
         </div>
       </Link>
 
-      <Link href="blogs/blockchain">
+      <Link href="blogs/react">
         <div className="service clickable">
-          <span className="blockchain-icon">
-            <SiNodeRed />
+          <span className="react-icon">
+            <FaReact />
           </span>
-          <h3 className="services--title services__service-3--title">
-            Blockchain
-          </h3>
+          <h3 className="services--title ">React Js</h3>
         </div>
       </Link>
       <Link href="blogs/nodejs">
@@ -44,15 +42,17 @@ const BlogTopics = () => {
           <h3 className="services--title ">Node Js</h3>
         </div>
       </Link>
-
-      <Link href="blogs/react">
+      <Link href="blogs/blockchain">
         <div className="service clickable">
-          <span className="react-icon">
-            <FaReact />
+          <span className="blockchain-icon">
+            <SiNodeRed />
           </span>
-          <h3 className="services--title ">React Js</h3>
+          <h3 className="services--title services__service-3--title">
+            Blockchain
+          </h3>
         </div>
       </Link>
+
       <Link href="blogs/angular">
         <div className="service services__service-6 clickable">
           <span className="angular-icon">

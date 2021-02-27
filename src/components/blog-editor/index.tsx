@@ -164,7 +164,9 @@ const MyEditor: React.FC<MyEditorProps> = ({
           `}
         </style>
       </Slate>
-      <button onClick={save}></button>
+      <button style={{ marginBottom: "3rem" }} onClick={save}>
+        SAVE
+      </button>
     </div>
   );
 };

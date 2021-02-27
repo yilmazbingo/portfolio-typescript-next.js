@@ -63,11 +63,15 @@ const BasePage: React.FC<BasePage> = (props) => {
           content={`${process.env.BASE_URL}/images/frontend.jpeg`}
         />
 
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
+        ></link> */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          rel="stylesheet"
         ></link>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
         <link
           rel="canonical"
