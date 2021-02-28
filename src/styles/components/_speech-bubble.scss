@@ -1,19 +1,21 @@
 .speech {
   position: relative;
-  margin-left: 50rem;
+  // margin-left: 50rem;
   color: rgb(248, 187, 19);
   box-shadow: chocolate;
   padding: 2rem;
   background-color: rgb(52, 110, 235);
-  max-width: 40rem;
-  text-align: center;
+  width: 35rem;
   border-radius: 2rem;
   border-color: brown;
+  display: "flex";
+  flex-direction: column;
+  text-align: center;
 }
 .speech::before {
   position: absolute;
   bottom: -2rem;
-  left: 80%;
+  left: 8rem;
   content: "";
   border: 2rem solid transparent;
   border-top-color: brown;
@@ -23,7 +25,7 @@
 .speech::after {
   position: absolute;
   top: -4rem;
-  right: 80%;
+  right: 10rem;
   content: "";
   border: 2rem solid transparent;
   //   border-radius: 2rem;

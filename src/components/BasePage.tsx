@@ -68,7 +68,7 @@ const BasePage: React.FC<BasePage> = (props) => {
           rel="stylesheet"
         ></link> */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Alice&family=Great+Vibes&family=Inconsolata&family=Indie+Flower&family=Lobster&family=Press+Start+2P&display=swap"
           rel="stylesheet"
         ></link>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />

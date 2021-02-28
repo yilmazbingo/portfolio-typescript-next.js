@@ -6,14 +6,21 @@ import SpeechBubble from "@/components/SpeechBubble";
 const NotFound = () => {
   return (
     <BaseLayout>
-      <BasePage>
+      <BasePage noWrapper>
         <div
+          className="mx-auto"
           style={{
             marginTop: "10rem",
             textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          <img src="/images/404.jpg" alt="not-found" />
+          <img
+            src="/images/404.jpg"
+            alt="not-found"
+            style={{ width: "40rem", height: "40rem" }}
+          />
           <SpeechBubble>
             <h2>I COULD NOT FIND THE PAGE</h2>
           </SpeechBubble>
