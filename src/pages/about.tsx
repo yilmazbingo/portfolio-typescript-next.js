@@ -50,23 +50,21 @@ const AboutMe = () => {
           <Col md="6">
             <div className={`${createFadeInClass()}`}>
               <h2>
-                My name is Yilmaz BINGOL and I am an experienced software
-                engineer and freelance developer.{" "}
+                My three major interests and passions are Computer Science,
+                Maths and Finance.
               </h2>
               <h2>
-                I have a Master's degree in Global Business and Finance and
-                several years of experience working on a wide range of
-                technologies and projects from C++ development for ultrasound
-                devices to modern mobile and web applications in React and
-                Angular.
+                I have a bachelor degree of Mathematics and Computer Science,
+                completed my master in Global Business and Finance from Brooklyn
+                College and currently I am an experienced software engineer and
+                freelance developer.
               </h2>
+
               <h2>
                 Throughout my career, I have acquired advanced technical
-                knowledge and the ability to explain programming topics clearly
-                and in detail to a broad audience. I invite you to take my
-                course, where I have put a lot of effort to explain web and
-                software engineering concepts in a detailed, hands-on and
-                understandable way.
+                knowledge and the ability to explain my knowledge clearly and in
+                detail to a broad audience. To share my knowledge with the
+                world, I decided to create a blogging website.
               </h2>
             </div>
           </Col>
