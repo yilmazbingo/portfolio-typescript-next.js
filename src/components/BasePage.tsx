@@ -38,6 +38,7 @@ const BasePage: React.FC<BasePage> = (props) => {
     <>
       <Head>
         <title>{title}</title>
+        <html lang="en"></html>
         {/* mobile devices by default takes the content from desktop and squueze it. But we want it to be responsive */}
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
