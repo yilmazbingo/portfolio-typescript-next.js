@@ -54,17 +54,17 @@ const AboutMe = () => {
                 Maths and Finance.
               </h2>
               <h2>
-                I have a bachelor degree of Mathematics and Computer Science,
-                completed my master in Global Business and Finance from Brooklyn
-                College and currently I am an experienced software engineer and
-                freelance developer.
+                I have a bachelor degree of Mathematics and Computer Science.
+                Also I completed my master in Global Business and Finance from
+                Brooklyn College. I am currently working as a software engineer
+                and freelance developer.
               </h2>
 
               <h2>
-                Throughout my career, I have acquired advanced technical
-                knowledge and the ability to explain my knowledge clearly and in
-                detail to a broad audience. To share my knowledge with the
-                world, I decided to create a blogging website.
+                I created this platform because throughout my career, I have
+                worked towards advancing my technical knowledge and the ability
+                to explain my knowledge clearly and in detail to a broad
+                audience.
               </h2>
             </div>
           </Col>
