@@ -22,6 +22,7 @@ module.exports = {
     EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
     EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
     EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
+    BASE_URL: process.env.BASE_URL,
     // NODE_ENV: process.env.NODE_ENV,
     // AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     // AUTH0_CLIENT: process.env.AUTH0_CLIENT,
