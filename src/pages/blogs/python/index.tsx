@@ -9,7 +9,6 @@ import { IBlog } from "@/types/interfaces";
 
 const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();
-  console.log("blogs in python", blogs);
 
   return (
     <BaseLayout
