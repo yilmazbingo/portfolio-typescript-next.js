@@ -1,9 +1,12 @@
 //env's in env.local are loaded server, env's here are loaded to client
 
 const path = require("path");
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
+
 // import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
-module.exports = {
+module.exports = withPWA({
   webpack: (config) => {
     //   // this is natively supported by next .js now. in jsconfig.json
     //   config.resolve.alias["@"] = path.resolve(__dirname, "src");
@@ -31,4 +34,8 @@ module.exports = {
     // AUTHO_POST_LOGOUT_REDIRECT_URI: process.env.AUTHO_POST_LOGOUT_REDIRECT_URI,
     // AUTH0_COOKIE_SECRET: process.env.AUTH0_COOKIE_SECRET,
   },
-};
+  pwa: {
+    dest: "public",
+    runtimeCaching,
+  },
+});

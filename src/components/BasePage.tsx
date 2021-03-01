@@ -40,6 +40,7 @@ const BasePage: React.FC<BasePage> = (props) => {
         <title>{title}</title>
         {/* mobile devices by default takes the content from desktop and squueze it. But we want it to be responsive */}
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         {/* First line of result when somoene searches your page */}
         <meta name="description" key="description" content={metaDescription} />
         <meta name="title" key="title" content={title} />
@@ -67,6 +68,7 @@ const BasePage: React.FC<BasePage> = (props) => {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         ></link> */}
+        <link rel="manifest" href="/manifest.json" />
         <link
           href="https://fonts.googleapis.com/css2?family=Alice&family=Great+Vibes&family=Inconsolata&family=Indie+Flower&family=Lobster&family=Press+Start+2P&display=swap"
           rel="stylesheet"
