@@ -6,7 +6,7 @@ const runtimeCaching = require("next-pwa/cache");
 
 // import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
-module.exports = withPWA({
+module.exports = {
   webpack: (config) => {
     //   // this is natively supported by next .js now. in jsconfig.json
     //   config.resolve.alias["@"] = path.resolve(__dirname, "src");
@@ -34,9 +34,9 @@ module.exports = withPWA({
     // AUTHO_POST_LOGOUT_REDIRECT_URI: process.env.AUTHO_POST_LOGOUT_REDIRECT_URI,
     // AUTH0_COOKIE_SECRET: process.env.AUTH0_COOKIE_SECRET,
   },
-  pwa: {
-    dest: "public",
-    // runtimeCaching,
-    swSrc: "service-worker.js",
-  },
-});
+  // pwa: {
+  //   dest: "public",
+  //   // runtimeCaching,
+  //   swSrc: "service-worker.js",
+  // },
+};
