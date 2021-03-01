@@ -60,7 +60,7 @@ const BasePage: React.FC<BasePage> = (props) => {
         <meta
           property="og:image"
           key="og:image"
-          content={`${process.env.BASE_URL}/images/js.png`}
+          content="https://bingolyilmaz.com/images/frontend.jpeg"
         />
 
         {/* <link
