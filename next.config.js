@@ -37,5 +37,6 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
     runtimeCaching,
+    swSrc: "service-worker.js",
   },
 });
