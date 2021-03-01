@@ -29,13 +29,6 @@ const auth0: ISignInWithAuth0 = initAuth0({
 });
 export default auth0;
 
-console.log(
-  "env variables",
-  process.env.AUTH0_DOMAIN,
-  process.env.AUTH0_REDIRECT_URI,
-  process.env.AUTHO_POST_LOGOUT_REDIRECT_URI
-);
-
 // export const isAuthorized = (user, role) => {
 //   return user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role);
 // };
