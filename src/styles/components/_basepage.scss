@@ -105,3 +105,9 @@
   margin-top: 1rem;
   color: green;
 }
+
+@media only screen and (max-width: 760px) {
+  .blog-slug-page {
+    width: 100%;
+  }
+}
