@@ -37,7 +37,7 @@ const ReadOnlyView: React.FC<SlateViewProps> = ({ initialContent }) => {
   }, [initialContent]);
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Slate
         editor={editor}
         value={value}

@@ -9,6 +9,7 @@
 // Blog LISTING!
 .blog-listing-page {
   min-height: 100vh;
+  width: 100%;
   background-color: map-get($background-colors, blog-listing-page);
 
   .blog-body {
@@ -110,3 +111,9 @@
     }
   }
 }
+
+// @media only screen and (max-width: 70px) {
+//   body {
+//     background-color: lightblue;
+//   }
+// }

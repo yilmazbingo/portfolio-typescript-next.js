@@ -1,8 +1,6 @@
 //env's in env.local are loaded server, env's here are loaded to client
 
 const path = require("path");
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
 
 // import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
