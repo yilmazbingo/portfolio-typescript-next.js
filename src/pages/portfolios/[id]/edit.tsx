@@ -1,5 +1,5 @@
-import BaseLayout from "@/components/layouts/BaseLayout";
-import BasePage from "@/components/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
 import withAuth from "@/hoc/withAuth";
 import { useRouter } from "next/router";
 import { useGetPortfolio } from "@/actions/portfolios";

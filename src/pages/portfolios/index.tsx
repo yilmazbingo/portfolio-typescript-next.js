@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from "react";
-import BaseLayout from "@/components/layouts/BaseLayout";
-import BasePage from "@/components/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
 import { Row, Col, Button } from "reactstrap";
 import { useRouter } from "next/router";
 import { useGetUser } from "@/actions/user";

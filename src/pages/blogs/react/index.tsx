@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useGetUser } from "@/actions/user";
 import BlogItem from "@/components/BlogItem";
-import BasePage from "@/components/BasePage";
-import BaseLayout from "@/components/layouts/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import { IBlog } from "@/types/interfaces";
 import { FaReact } from "react-icons/fa";

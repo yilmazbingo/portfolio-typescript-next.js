@@ -1,9 +1,9 @@
-import Header from "@/components/shared/Header";
+import Header from "@/components/layout/Header";
 import { ToastContainer } from "react-toastify";
 import { IUser } from "@/types/interfaces";
 import SideBar from "@/components/shared/SideNav";
 import Loading from "../Loading";
-import Copyright from "../shared/Copyright";
+import Copyright from "./Copyright";
 
 interface BaseLayoutProps {
   className?: string;

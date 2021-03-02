@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, RefObject } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import { useGetUser } from "@/actions/user";
-import BasePage from "@/components/BasePage";
+import BasePage from "@/components/layout/BasePage";
 import ContactForm from "@/components/ContactForm";
-import BaseLayout from "@/components/layouts/BaseLayout";
+import BaseLayout from "@/components/layout/BaseLayout";
 import ShowCase from "@/components/ShowCase";
 import Skills from "@/components/Skills";
 import Typed from "@/components/Typed";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import BaseLayout from "@/components/layouts/BaseLayout";
-import BasePage from "@/components/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
 import withAuth from "@/hoc/withAuth";
 // import { Editor } from "slate-simple-editor";
 import MyEditor from "@/components/blog-editor";

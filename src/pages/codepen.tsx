@@ -1,7 +1,7 @@
 import CodeCell from "@/components/codepen/CodeCell";
 import React from "react";
-import BasePage from "@/components/BasePage";
-import Header from "@/components/shared/Header";
+import BasePage from "@/components/layout/BasePage";
+import Header from "@/components/layout/Header";
 
 const Codepen = () => {
   return (

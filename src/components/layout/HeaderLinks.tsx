@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { UrlObject } from "url";
-import ActiveLink from "./ActiveLink";
+import ActiveLink from "../shared/ActiveLink";
 
 interface BsNavLinkProps {
   href: string | UrlObject;

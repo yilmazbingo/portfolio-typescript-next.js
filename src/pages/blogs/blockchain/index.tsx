@@ -1,6 +1,6 @@
 import { useGetUser } from "@/actions/user";
-import BasePage from "@/components/BasePage";
-import BaseLayout from "@/components/layouts/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
 import { IBlog } from "@/types/interfaces";

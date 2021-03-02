@@ -4,8 +4,8 @@ import MyEditor from "@/components/blog-editor";
 import { useCreateBlog } from "@/actions/blogs";
 import ErrorHandler from "@/components/ErrorHandler";
 import { toast } from "react-toastify";
-import BaseLayout from "@/components/layouts/BaseLayout";
-import BasePage from "@/components/BasePage";
+import BaseLayout from "@/components/layout/BaseLayout";
+import BasePage from "@/components/layout/BasePage";
 
 import { useRouter } from "next/router";
 
