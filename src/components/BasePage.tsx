@@ -69,9 +69,9 @@ const BasePage: React.FC<BasePage> = (props) => {
           rel="stylesheet"
         ></link> */}
         {/* **********************  PWA SETTINGS */}
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        {/* <link rel="apple-touch-icon" href="/apple-icon.png"></link> */}
         <meta name="theme-color" content="#317EFB" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="manifest" href="/manifest.json" /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Alice&family=Great+Vibes&family=Inconsolata&family=Indie+Flower&family=Lobster&family=Press+Start+2P&display=swap"
           rel="stylesheet"
