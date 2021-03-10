@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState, RefObject } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import { useGetUser } from "@/actions/user";
 import BasePage from "@/components/layout/BasePage";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/home-components/ContactForm";
 import BaseLayout from "@/components/layout/BaseLayout";
-import ShowCase from "@/components/ShowCase";
-import Skills from "@/components/Skills";
-import Typed from "@/components/Typed";
+import ShowCase from "@/components/home-components/ShowCase";
+import Skills from "@/components/home-components/Skills";
+import Typed from "@/components/home-components/Typed";
 import FloadingBoxAnime from "@/components/FloadingBoxesAnim";
 
 const Index = () => {
@@ -25,7 +25,6 @@ const Index = () => {
     }, 10000);
   };
   const { width, height, ref } = useResizeDetector();
-  console.log("width", width);
   return (
     <BaseLayout user={data} loading={loading} className="home-layout">
       {/* <FloadingBoxAnime /> */}
@@ -35,8 +34,6 @@ const Index = () => {
         title="Portfolio - Yilmaz Bingol"
         noWrapper
       >
-        {/* <FloadingBoxAnime /> */}
-
         <section
           className="hero-section"
           ref={

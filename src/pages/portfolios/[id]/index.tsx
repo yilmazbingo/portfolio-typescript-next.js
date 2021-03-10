@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import BaseLayout from "@/components/layout/BaseLayout";
 import BasePage from "@/components/layout/BasePage";
 import { useGetUser } from "@/actions/user";
@@ -64,7 +65,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ portfolio }) => {
   );
 };
 
-// this function is executed at built time
+// this function is executed at built time Without getStaticProps, getStaticPaths does nothing without props
 export async function getStaticPaths() {
   const json = await new PortfolioApi().getAll();
   const portfolios = json.data;
@@ -80,11 +81,11 @@ export async function getStaticPaths() {
   return { paths, fallback: true };
 }
 
-export async function getStaticProps({ params }: { params: Params }) {
-  const json = await new PortfolioApi().getById(params.id);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const json = await new PortfolioApi().getById(context?.params?.id as string);
   const portfolio = json.data;
   return { props: { portfolio }, revalidate: 1 };
-}
+};
 
 type Params = { id: string };
 

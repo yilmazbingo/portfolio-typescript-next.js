@@ -47,16 +47,17 @@ export const getServerSideProps = withAuth(
 
 export default SecretSSR;
 
-// export const setServerSideProps = ({ req, res }) => {
-//   const session = await auth0.getSession(req);
-//   if (!session || session.user) {
-//     res.writeHead(302, {
-//       Location: "/api/v1/login",
-//     });
-//     res.end();
-//     return { props: {} };
-//   }
-//   return {
-//     props:{user:session.user}
-//   }
-// };
+export const setServerSideProps = ({ req, res }) => {
+  // checking if there is session. if not redirect with.res.writeHead
+  // const session = await auth0.getSession(req);
+  // if (!session || session.user) {
+  //   res.writeHead(302, {
+  //     Location: "/api/v1/login",
+  //   });
+  //   res.end();
+  //   return { props: {} };
+  // }
+  // return {
+  //   props:{user:session.user}
+  // }
+};

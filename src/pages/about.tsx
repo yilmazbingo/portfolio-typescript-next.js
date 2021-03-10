@@ -52,14 +52,13 @@ const AboutMe = () => {
               <h2>
                 My three major interests and passions are Computer Science,
                 Maths and Finance.
-              </h2>
+              </h2>{" "}
               <h2>
                 I have a bachelor degree of Mathematics and Computer Science.
                 Also I completed my master in Global Business and Finance from
                 Brooklyn College. I am currently working as a software engineer
                 and freelance developer.
-              </h2>
-
+              </h2>{" "}
               <h2>
                 I created this platform because throughout my career, I have
                 worked towards advancing my technical knowledge and the ability

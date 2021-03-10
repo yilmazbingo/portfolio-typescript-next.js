@@ -24,6 +24,8 @@
 @import "./components/codepen/preview";
 @import "./components/codepen/resizable";
 @import "./components/codepen/syntax-highlighter";
+// Components/home-components
+@import "./components/home-components/typed";
 // Pages
 @import "./pages/index";
 @import "./pages/portfolios";
@@ -51,20 +53,6 @@ body {
 }
 .contaner {
   margin: 0;
-}
-
-.self-typed {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  // padding-top: 10rem;
-  // margin-top: 10rem;
-  font-size: 3rem;
-  color: #04c404;
-  font-family: " PressStart2P" !important;
-  font-weight: bold;
-  // letter-spacing: 0.2rem;
-  background-color: black;
 }
 
 .avatar-box {

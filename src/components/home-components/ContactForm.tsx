@@ -2,7 +2,7 @@ import emailjs from "emailjs-com";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 
-const Modal = dynamic(() => import("./Modal"), { ssr: false });
+const Modal = dynamic(() => import("../Modal"), { ssr: false });
 const ContactForm = () => {
   // const initialValues = { name: "", email: "", subject: "", message: "" };
   // const [formValues, setFormValues] = useState(initialValues);

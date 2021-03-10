@@ -6,7 +6,6 @@ import PortfolioForm from "@/components/PortfolioForm";
 import { useCreatePortfolio } from "@/actions/portfolios";
 import Redirect from "@/components/shared/Redirect";
 import { IUser } from "@/types/interfaces";
-import ContactForm from "@/components/ContactForm";
 
 interface PortfolioNewProps {
   user: IUser;
