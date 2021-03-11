@@ -6,8 +6,8 @@ import { toast } from "react-toastify";
 import BaseLayout from "@/components/layout/BaseLayout";
 import BasePage from "@/components/layout/BasePage";
 import withAuth from "@/hoc/withAuth";
-import BlogField from "@/components/blog-editor/BlogField";
-import BlogTitle from "@/components/blog-editor/BlogTitle";
+import BlogField from "@/components/blog-view/BlogField";
+import BlogTitle from "@/components/blog-view/BlogTitle";
 
 import { useRouter } from "next/router";
 

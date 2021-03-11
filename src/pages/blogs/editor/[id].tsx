@@ -9,8 +9,8 @@ import { toast } from "react-toastify";
 import { useGetBlog, useUpdateBlog } from "@/actions/blogs";
 import { useRouter } from "next/router";
 import { IBlogEditorProps } from "@/types/interfaces";
-import BlogField from "@/components/blog-editor/BlogField";
-import BlogTitle from "@/components/blog-editor/BlogTitle";
+import BlogField from "@/components/blog-view/BlogField";
+import BlogTitle from "@/components/blog-view/BlogTitle";
 
 const BlogUpdateEditor: React.FC<IBlogEditorProps> = ({ user, loading }) => {
   const router = useRouter();
