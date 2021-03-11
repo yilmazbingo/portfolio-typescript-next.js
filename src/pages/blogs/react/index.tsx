@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useGetUser } from "@/actions/user";
-import BlogItem from "@/components/BlogItem";
+import BlogItem from "@/components/blog-view/BlogItem";
 import BasePage from "@/components/layout/BasePage";
 import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";

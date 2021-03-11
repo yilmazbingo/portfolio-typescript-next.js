@@ -18,6 +18,7 @@ const TypedAnimation = () => {
     "TypeScript",
     "GraphQL",
     "Python",
+    "Django",
     "Flask",
     "MySQL",
     "PostgreSQL",
@@ -29,10 +30,10 @@ const TypedAnimation = () => {
     "AWS",
     "SCSS",
     "SEO",
+    "Git&Github",
   ];
   return (
     <Typed
-      style={{ fontFamily: "PressStart2P" }}
       loop
       typeSpeed={60}
       backSpeed={60}

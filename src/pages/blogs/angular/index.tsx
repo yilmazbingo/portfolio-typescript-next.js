@@ -4,7 +4,7 @@ import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
 import { IBlog } from "@/types/interfaces";
-import BlogItem from "@/components/BlogItem";
+import BlogItem from "@/components/blog-view/BlogItem";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();

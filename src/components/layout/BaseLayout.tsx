@@ -10,15 +10,23 @@ interface BaseLayoutProps {
   user?: IUser;
   navClass?: string;
   loading?: boolean;
+  noSideBar?: boolean;
 }
 const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
-  const { className, user, navClass = "with-bg", loading, children } = props;
+  const {
+    className,
+    user,
+    navClass = "with-bg",
+    loading,
+    children,
+    noSideBar,
+  } = props;
   const renderer = () =>
     loading ? (
       <Loading />
     ) : (
-      <div className="baselayout">
-        <SideBar />
+      <div className={`baselayout ${className}`}>
+        {noSideBar ? "" : <SideBar />}
 
         <main
           className={className}

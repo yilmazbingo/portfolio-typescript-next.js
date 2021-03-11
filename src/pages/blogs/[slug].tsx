@@ -2,7 +2,8 @@ import BaseLayout from "@/components/layout/BaseLayout";
 import BasePage from "@/components/layout/BasePage";
 import { useGetUser } from "@/actions/user";
 import { SlateView } from "slate-simple-editor";
-import Avatar from "@/components/shared/Avatar";
+import BlogHeader from "@/components/blog-view/BlogHeader";
+import Avatar from "@/components/blog-view/Avatar";
 import BlogApi from "@/lib/api/blogs";
 import { IUserBlogs, IBlog, IUser } from "@/types/interfaces";
 import ReadOnlyView from "@/components/blog-editor/ReadOnlyView";
@@ -15,20 +16,20 @@ interface BlogDetailProps {
 const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
   const { data, loading } = useGetUser();
   return (
-    <BaseLayout user={data} loading={loading}>
+    <BaseLayout user={data} loading={loading} noSideBar className="blog-slug">
       <BasePage
         title={`${blog.title} - YILMAZ BINGOL`}
         metaDescription={blog.subTitle}
         className="blog-slug-page"
         noWrapper
       >
-        <h2>{blog.title}</h2>
+        <BlogHeader title={blog.title} />
+        {/* <h1>{blog.title}</h1> */}
         <Avatar
           author={author.name}
           image={author.picture}
           date={blog.createdAt}
         />
-        <hr />
         {/* <SlateView initialContent={blog.content} /> */}
         <ReadOnlyView initialContent={blog.content} />
       </BasePage>

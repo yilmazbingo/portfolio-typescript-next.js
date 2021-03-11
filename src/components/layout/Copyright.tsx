@@ -9,7 +9,6 @@ const Copyright = () => {
         textAlign: "center",
         color: "white",
         bottom: "0",
-        position: "absolute",
         width: "100%",
       }}
     >

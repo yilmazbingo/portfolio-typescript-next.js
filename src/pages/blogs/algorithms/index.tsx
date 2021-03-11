@@ -3,11 +3,10 @@ import BasePage from "@/components/layout/BasePage";
 import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
+import { IBlog } from "@/types/interfaces";
 import BlogItem from "@/components/blog-view/BlogItem";
 
-import { IBlog } from "@/types/interfaces";
-
-const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
+const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();
 
   return (
@@ -18,17 +17,18 @@ const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
       loading={loading}
     >
       <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-        <Masthead imagePath="/images/py.jpg">
-          <h1>World of Python</h1>
-          <span className="subheading">Pythonizm</span>
+        <Masthead imagePath="/images/algo.webp">
+          <h1>Data Structures </h1>
+          <h2> AND </h2>
+          <h1>Algorithms</h1>
         </Masthead>
         <BasePage
-          title="Python Blogs - YILMAZ BINGOL"
+          title="Data Structures Algorithm Blogs - YILMAZ BINGOL"
           className="blog-body"
           noWrapper
-          metaDescription="python blogs Yilmaz Bingol"
+          metaDescription="algorithms with python and javascript blogs Yilmaz Bingol"
         >
-          {blogs &&
+          {blogs.length > 0 &&
             blogs.map((blog: IBlog) => <BlogItem blog={blog} key={blog._id} />)}
         </BasePage>
       </div>
@@ -37,12 +37,9 @@ const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
 };
 
 export async function getStaticProps() {
-  const { data }: { data: IBlog[] } = await new BlogApi().getById("python");
-  // const result = await new BlogApi().getById("python");
-
+  const { data }: { data: IBlog[] } = await new BlogApi().getById("algorithms");
   return {
     props: { blogs: data },
-    // Error: The `unstable_revalidate` property is available for general use. Please use `revalidate` instead.
     revalidate: 1,
   };
 }

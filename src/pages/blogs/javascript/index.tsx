@@ -6,7 +6,7 @@ import BlogApi from "@/lib/api/blogs";
 import { useGetUser } from "@/actions/user";
 import { IBlog } from "@/types/interfaces";
 
-import BlogItem from "@/components/BlogItem";
+import BlogItem from "@/components/blog-view/BlogItem";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();

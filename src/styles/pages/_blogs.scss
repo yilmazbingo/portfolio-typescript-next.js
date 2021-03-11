@@ -85,7 +85,7 @@
 // USER_BLOGS --------------------------------------
 .base-page {
   &.blog-dashboard-page {
-    padding-top: 5rem;
+    padding-top: 4rem;
     flex-grow: 1;
 
     .user-blogs-list {
@@ -110,6 +110,94 @@
       margin-left: 1rem;
     }
   }
+}
+
+.blog-slug-page {
+  margin-top: 10rem;
+  border-radius: 2rem;
+  // width: 100%;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  background-color: map-get($background-colors, blog-slug-page);
+  display: flex;
+  flex-direction: column;
+  // padding-left: 2rem;
+  // position: relative;
+  .blog-header {
+    background-color: black;
+    width: 100%;
+    top: 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    h1 {
+      text-align: center;
+      color: rgb(197, 22, 197);
+      text-transform: capitalize;
+      font-family: Lobster;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08rem;
+    }
+  }
+
+  hr {
+    color: purple;
+
+    width: 100%;
+  }
+  p {
+    font-size: 1.6rem;
+    font-family: Inconsolata-Regular;
+  }
+  pre {
+    padding: 1rem;
+    background-color: #eee;
+    white-space: pre-wrap;
+  }
+  img {
+    max-width: 100%;
+    max-height: 20rem;
+  }
+  blockquote {
+    border-left: 0.2rem solid #ddd;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  blockquote[dir="rtl"] {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 1rem;
+    border-right: 0.2rem solid #ddd;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    padding: 1rem;
+    border: 0.2rem solid #ddd;
+  }
+  input {
+    box-sizing: border-box;
+    font-size: 0.85em;
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.2rem solid #ddd;
+    background: #fafafa;
+  }
+  input:focus {
+    outline: 0;
+    border-color: blue;
+  }
+}
+
+.blog-slug-page [data-slate-editor] > * + * {
+  margin-top: 1rem;
+  color: black;
 }
 
 // @media only screen and (max-width: 70px) {

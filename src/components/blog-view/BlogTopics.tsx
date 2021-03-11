@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaReact, FaNodeJs, FaPython, FaAngular } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiNodeRed } from "react-icons/si";
+import { FcDataSheet } from "react-icons/fc";
 
 const BlogTopics = () => {
   return (
@@ -60,6 +61,16 @@ const BlogTopics = () => {
           </span>
           <h3 className="services--title services__service-6--title">
             Angular
+          </h3>
+        </div>
+      </Link>
+      <Link href="blogs/algorithms">
+        <div className="service services__service-6 clickable">
+          <span className="angular-icon">
+            <FcDataSheet />
+          </span>
+          <h3 className="services--title services__service-6--title">
+            Data Structures and Algorithms
           </h3>
         </div>
       </Link>

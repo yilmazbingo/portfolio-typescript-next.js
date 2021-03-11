@@ -2,11 +2,9 @@ import BaseLayout from "@/components/layout/BaseLayout";
 import BasePage from "@/components/layout/BasePage";
 import { useGetUser } from "@/actions/user";
 import Masthead from "@/components/shared/Masthead";
-import { Row, Col, Container } from "reactstrap";
-import BlogItem from "@/components/BlogItem";
 import BlogApi from "@/lib/api/blogs";
 import { IBlog, IUserBlogs } from "../../types/interfaces/index";
-import BlogTopics from "@/components/BlogTopics";
+import BlogTopics from "@/components/blog-view/BlogTopics";
 
 const Blogs: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data, loading } = useGetUser();

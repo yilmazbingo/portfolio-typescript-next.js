@@ -26,6 +26,8 @@
 @import "./components/codepen/syntax-highlighter";
 // Components/home-components
 @import "./components/home-components/typed";
+// Components/blog-view
+@import "./components/blog-view/avatar";
 // Pages
 @import "./pages/index";
 @import "./pages/portfolios";
@@ -53,21 +55,4 @@ body {
 }
 .contaner {
   margin: 0;
-}
-
-.avatar-box {
-  img {
-    height: 5rem;
-    border-radius: 50%;
-  }
-  .title {
-    font-family: IndieFlower-Regular;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-  }
-}
-a {
-  text-decoration: none;
 }

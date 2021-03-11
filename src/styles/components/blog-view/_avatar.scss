@@ -1,0 +1,22 @@
+.avatar-box {
+  color: white;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  background-color: map-get($background-colors, avatar);
+  padding-top: 1rem;
+  img {
+    height: 5rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  .title {
+    font-family: IndieFlower-Regular;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+}
+a {
+  text-decoration: none;
+}
