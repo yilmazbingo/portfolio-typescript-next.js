@@ -8,6 +8,7 @@ import BasePage from "@/components/layout/BasePage";
 import withAuth from "@/hoc/withAuth";
 import BlogField from "@/components/blog-view/BlogField";
 import BlogTitle from "@/components/blog-view/BlogTitle";
+import { useGetUser } from "@/actions/user";
 
 import { useRouter } from "next/router";
 
@@ -18,7 +19,7 @@ const BlogEditor = () => {
   const [titleError, setTitleError] = useState("");
   const [fieldError, setFieldError] = useState("");
   const [err, setErr] = useState(null);
-  console.log("field", field);
+  const { data, loading } = useGetUser();
 
   const router = useRouter();
   const [
@@ -35,7 +36,7 @@ const BlogEditor = () => {
   console.log("error", error);
   const onHandle = () => setErr(null);
   return (
-    <BaseLayout>
+    <BaseLayout user={data} loading={loading}>
       <BasePage noWrapper className="blog-editor-page">
         <div className="blog-initial">
           {err && (
