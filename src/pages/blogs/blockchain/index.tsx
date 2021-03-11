@@ -17,8 +17,8 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
     >
       <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
         <Masthead imagePath="/images/blockchain.png">
-          <h1>World of Blockchain</h1>
-          <span className="subheading">Blockchainizm</span>
+          {/* <h1>World of Blockchain</h1>
+          <span className="subheading">Blockchainizm</span> */}
         </Masthead>
         <BasePage
           title="Blockchain and Bitcoin Blogs - YILMAZ BINGOL"
