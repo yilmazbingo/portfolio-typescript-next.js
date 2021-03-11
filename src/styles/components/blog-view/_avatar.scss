@@ -5,10 +5,15 @@
   background-color: map-get($background-colors, avatar);
   padding-top: 1rem;
   .algorithm-lang {
-    height: 3rem;
+    height: 4rem;
     background-color: rgb(116, 4, 160);
+    font-size: large;
     color: white;
+    align-self: center;
     text-transform: uppercase;
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-right: 1rem;
   }
   img {
     height: 5rem;
