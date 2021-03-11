@@ -9,6 +9,7 @@ export interface IBlog {
   createdAt: Date;
   updatedAt: Date;
   author: { name: string };
+  field: string;
 }
 export interface IUserBlogs {
   blog: IBlog;

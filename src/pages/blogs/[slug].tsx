@@ -29,6 +29,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
           author={author.name}
           image={author.picture}
           date={blog.createdAt}
+          field={blog.field}
         />
         {/* <SlateView initialContent={blog.content} /> */}
         <ReadOnlyView initialContent={blog.content} />

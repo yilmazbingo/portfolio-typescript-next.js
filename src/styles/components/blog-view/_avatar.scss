@@ -4,6 +4,12 @@
   padding-bottom: 1rem;
   background-color: map-get($background-colors, avatar);
   padding-top: 1rem;
+  .algorithm-lang {
+    height: 3rem;
+    background-color: rgb(116, 4, 160);
+    color: white;
+    text-transform: uppercase;
+  }
   img {
     height: 5rem;
     border-radius: 50%;
