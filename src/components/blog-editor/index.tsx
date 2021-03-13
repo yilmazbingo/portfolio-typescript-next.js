@@ -4,6 +4,7 @@ import { createEditor, Node } from "slate";
 import { withHistory } from "slate-history";
 import { Editable, Slate, useSlate, withReact } from "slate-react";
 import HoveringToolbar from "./HoverMenu";
+import { withEmbeds } from "./EmbedVideo";
 import { Button, Icon, Toolbar } from "./components";
 import Constants from "./constants";
 import Element from "./Element";
@@ -55,7 +56,7 @@ const MyEditor: React.FC<MyEditorProps> = ({
   const renderElement = useCallback((props) => <Element {...props} />, []);
   const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
   const editor = useMemo(
-    () => withLinks(withHistory(withReact(createEditor()))),
+    () => withEmbeds(withLinks(withHistory(withReact(createEditor())))),
     []
   );
 

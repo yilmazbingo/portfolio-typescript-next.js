@@ -21,30 +21,27 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
     children,
     noSideBar,
   } = props;
-  const renderer = () =>
-    loading ? (
-      <Loading />
-    ) : (
-      <div className={`baselayout ${className}`}>
-        {noSideBar ? "" : <SideBar />}
+  const renderer = () => (
+    <div className={`baselayout ${className}`}>
+      {noSideBar ? "" : <SideBar />}
 
-        <main
-          className={className}
-          style={{
-            display: "flex",
-            flex: "1",
-            flexDirection: "column",
-            position: "relative",
-          }}
-        >
-          <Header className={navClass} user={user} loading={loading} />
+      <main
+        className={className}
+        style={{
+          display: "flex",
+          flex: "1",
+          flexDirection: "column",
+          position: "relative",
+        }}
+      >
+        <Header className={navClass} user={user} loading={loading} />
 
-          {children}
-          <Copyright />
-        </main>
-        <ToastContainer />
-      </div>
-    );
+        {children}
+        <Copyright />
+      </main>
+      <ToastContainer />
+    </div>
+  );
   return <> {renderer()} </>;
 };
 

@@ -1,7 +1,7 @@
+import React, { useEffect } from "react";
 import BaseLayout from "@/components/layout/BaseLayout";
 import BasePage from "@/components/layout/BasePage";
 import { useGetUser } from "@/actions/user";
-import { SlateView } from "slate-simple-editor";
 import BlogHeader from "@/components/blog-view/BlogHeader";
 import Avatar from "@/components/blog-view/Avatar";
 import BlogApi from "@/lib/api/blogs";
@@ -16,11 +16,15 @@ interface BlogDetailProps {
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
   const { data, loading } = useGetUser();
+  useEffect(() => {
+    console.log("blog", blog);
+  }, []);
+
   return (
     <BaseLayout user={data} loading={loading} noSideBar className="blog-slug">
       <BasePage
         title={`${blog.title} - YILMAZ BINGOL`}
-        metaDescription={blog.subTitle}
+        // metaDescription={blog.subTitle}
         className="blog-slug-page"
         noWrapper
       >
@@ -50,6 +54,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const {
     data: { blog, author },
   } = await new BlogApi().getBySlug(params.slug);
+
+  console.log("blog", blog);
   return { props: { blog, author }, revalidate: 1000 };
 }
 

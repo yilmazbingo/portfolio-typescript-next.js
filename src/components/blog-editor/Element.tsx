@@ -1,13 +1,9 @@
 import React from "react";
-import { Element as SlateElement } from "slate";
+import { VideoElement } from "./EmbedVideo";
+import { ElementProps } from "./types";
 
-interface ElementProps {
-  attributes: { [key: string]: string };
-  children: React.ReactNode;
-  element: SlateElement;
-}
-
-const Element: React.FC<ElementProps> = ({ attributes, children, element }) => {
+const Element: React.FC<ElementProps> = (props) => {
+  const { attributes, children, element } = props;
   switch (element.type) {
     case "link":
       return (
@@ -17,6 +13,8 @@ const Element: React.FC<ElementProps> = ({ attributes, children, element }) => {
       );
     case "block-quote":
       return <blockquote {...attributes}>{children}</blockquote>;
+    case "video":
+      return <VideoElement {...props} />;
     case "bulleted-list":
       return <ul {...attributes}>{children}</ul>;
     case "heading-one":
