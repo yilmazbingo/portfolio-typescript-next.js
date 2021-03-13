@@ -35,6 +35,8 @@ const serialize = (node: Node): unknown => {
   const children = node.children.map((n) => serialize(n)).join("");
 
   switch (node.type) {
+    case "link":
+      return `<a>${children}</a>`;
     case "block-quote":
       return `<blockquote>${children}</blockquote>`;
     case "bulleted-list":

@@ -7,6 +7,7 @@ import Avatar from "@/components/blog-view/Avatar";
 import BlogApi from "@/lib/api/blogs";
 import { IUserBlogs, IBlog, IUser } from "@/types/interfaces";
 import ReadOnlyView from "@/components/blog-editor/ReadOnlyView";
+import { Container, Row, Col } from "reactstrap";
 
 interface BlogDetailProps {
   blog: IBlog;
@@ -32,6 +33,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
           field={blog.field}
         />
         {/* <SlateView initialContent={blog.content} /> */}
+
         <ReadOnlyView initialContent={blog.content} />
       </BasePage>
     </BaseLayout>

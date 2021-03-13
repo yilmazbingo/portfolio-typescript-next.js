@@ -9,6 +9,12 @@ interface ElementProps {
 
 const Element: React.FC<ElementProps> = ({ attributes, children, element }) => {
   switch (element.type) {
+    case "link":
+      return (
+        <a {...attributes} href={element.url as string}>
+          {children}
+        </a>
+      );
     case "block-quote":
       return <blockquote {...attributes}>{children}</blockquote>;
     case "bulleted-list":

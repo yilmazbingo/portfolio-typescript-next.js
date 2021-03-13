@@ -12,13 +12,14 @@ section#services {
   display: flex;
   margin: 0 2rem 4rem;
   //flex-basis has priority.  It sets the size of the content box unless otherwise set with box-sizing.
-  flex-basis: 40rem;
+  // flex-basis: 40%;
   flex-grow: 1;
   background-color: rgb(114, 3, 3);
   border-bottom: 0.2rem solid gray;
   border-right: 0.2rem solid gray;
   border-left: 0.2rem solid gray;
   color: white;
+  text-align: center;
   font-family: Lobster-Regular;
   position: relative;
   //   so this will be always on top of the ::after content
@@ -126,5 +127,20 @@ section#services {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .service {
+    margin: 0;
+    width: 100%;
+  }
+  section#services {
+    padding: 0;
+  }
+  .data-structres {
+    h3 {
+      font-size: 2rem;
+    }
   }
 }

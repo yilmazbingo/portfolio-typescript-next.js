@@ -15,6 +15,7 @@ import {
   toggleMark,
 } from "./functions";
 import Leaf from "./Leaf";
+import { withLinks, LinkButton } from "./LinkButton";
 const HOTKEYS = Constants.HOTKEYS;
 
 interface MyEditorProps {
@@ -52,7 +53,10 @@ const MyEditor: React.FC<MyEditorProps> = ({
   const [value, setValue] = useState<any>(initialValue);
   const renderElement = useCallback((props) => <Element {...props} />, []);
   const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
-  const editor = useMemo(() => withHistory(withReact(createEditor())), []);
+  const editor = useMemo(
+    () => withLinks(withHistory(withReact(createEditor()))),
+    []
+  );
 
   useEffect(() => {
     if (initialContent) {
@@ -126,6 +130,7 @@ const MyEditor: React.FC<MyEditorProps> = ({
           <MarkButton format="italic" icon="format_italic" />
           <MarkButton format="underline" icon="format_underlined" />
           <MarkButton format="code" icon="code" />
+          <LinkButton />
           <BlockButton format="heading-one" icon="looks_one" />
           <BlockButton format="heading-two" icon="looks_two" />
           <BlockButton format="block-quote" icon="format_quote" />

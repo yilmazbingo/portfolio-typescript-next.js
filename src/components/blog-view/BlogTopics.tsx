@@ -69,9 +69,11 @@ const BlogTopics = () => {
           <span className="angular-icon">
             <FcDataSheet />
           </span>
-          <h3 className="services--title services__service-6--title">
-            Data Structures and Algorithms
-          </h3>
+          <div className="data-structres">
+            <h3 className="services--title services__service-6--title">
+              Data Structures and Algorithms
+            </h3>
+          </div>
         </div>
       </Link>
     </section>
