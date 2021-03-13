@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { createEditor, Node } from "slate";
 import { withHistory } from "slate-history";
 import { Editable, Slate, useSlate, withReact } from "slate-react";
+import HoveringToolbar from "./HoverMenu";
 import { Button, Icon, Toolbar } from "./components";
 import Constants from "./constants";
 import Element from "./Element";
@@ -137,7 +138,7 @@ const MyEditor: React.FC<MyEditorProps> = ({
           <BlockButton format="numbered-list" icon="format_list_numbered" />
           <BlockButton format="bulleted-list" icon="format_list_bulleted" />
         </Toolbar>
-
+        <HoveringToolbar />
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}

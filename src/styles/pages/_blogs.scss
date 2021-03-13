@@ -7,80 +7,79 @@
 }
 
 // Blog LISTING!
-.blog-listing-page {
-  min-height: 100vh;
-  width: 100%;
-  background-color: map-get($background-colors, blog-listing-page);
+// .blog-listing-page {
+//   min-height: 100vh !important;
+//   width: 100%;
+//   background-color: map-get($background-colors, blog-listing-page);
 
-  .blog-body {
-    padding: 3rem 2rem 0 2rem;
+.blog-body {
+  // padding: 3rem 2rem 0 2rem;
+}
+
+.post-preview {
+  background-color: gray;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding-left: 2rem;
+  > a {
+    color: #750b0b;
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: #03e8f8;
+    }
+    > .post-title {
+      font-size: 3rem;
+      margin-top: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    > .post-subtitle {
+      font-weight: 300;
+      margin: 0 0 1rem;
+      color: #565656;
+    }
   }
 
-  .post-preview {
-    background-color: gray;
-    margin-bottom: 1rem;
-    border-radius: 2rem;
-    padding-left: 2rem;
-    margin-right: 4rem;
+  > .post-meta {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-top: 0;
+    color: white;
     > a {
-      color: #750b0b;
+      text-decoration: none;
+      color: #212529;
       &:focus,
       &:hover {
-        text-decoration: none;
+        text-decoration: underline;
         color: #03e8f8;
-      }
-      > .post-title {
-        font-size: 3rem;
-        margin-top: 2rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-      }
-      > .post-subtitle {
-        font-weight: 300;
-        margin: 0 0 1rem;
-        color: #565656;
-      }
-    }
-
-    > .post-meta {
-      font-size: 1.8rem;
-      font-style: italic;
-      margin-top: 0;
-      color: white;
-      > a {
-        text-decoration: none;
-        color: #212529;
-        &:focus,
-        &:hover {
-          text-decoration: underline;
-          color: #03e8f8;
-        }
-      }
-    }
-
-    @media only screen and (min-width: 768px) {
-      > a {
-        > .post-title {
-          font-size: 3.6rem;
-        }
       }
     }
   }
 
-  // Styling for the footer
-  footer {
-    padding: 5rem 0 6.5rem;
-    .list-inline {
-      margin: 0;
-      padding: 0;
-    }
-    .copyright {
-      font-size: 1.4rem;
-      margin-bottom: 0;
-      text-align: center;
+  @media only screen and (min-width: 768px) {
+    > a {
+      > .post-title {
+        font-size: 3.6rem;
+      }
     }
   }
 }
+
+// Styling for the footer
+footer {
+  padding: 5rem 0 6.5rem;
+  .list-inline {
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+// }
 
 // USER_BLOGS --------------------------------------
 .base-page {
