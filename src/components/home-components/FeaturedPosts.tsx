@@ -20,7 +20,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
   console.log("posts", posts);
 
   return (
-    <div style={{ backgroundColor: "pink" }}>
+    <div style={{ backgroundColor: "rgb(175, 5, 5)" }}>
       <Container
         style={{
           marginBottom: "2rem",
@@ -47,7 +47,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
                 <Link href={`/blogs/${post.slug}`}>
                   <a>
                     <ListGroup style={{ marginBottom: "2rem" }}>
-                      <ListGroup.Item>
+                      <ListGroup.Item style={{ backgroundColor: "blue" }}>
                         <Image
                           fluid
                           src={post.image}
@@ -58,6 +58,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
                             height: "4rem",
                             paddingBottom: "2rem",
                             overflowWrap: "break-word",
+                            backgroundColor: "black",
                           }}
                         >
                           <Row>
