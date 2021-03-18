@@ -7,6 +7,7 @@ import { useGetBlog } from "@/actions/blogs";
 import { IBlog } from "@/types/interfaces";
 import BlogItem from "@/components/blog-view/BlogItem";
 import { getPostsByField } from "@/helpers/markdownBlogs";
+import MapBlogs from "@/components/blog-view/MapBlogs";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();
@@ -37,8 +38,7 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
           noWrapper
           metaDescription="node.js blogs Yilmaz Bingol"
         >
-          {blogs &&
-            blogs.map((blog: IBlog) => <BlogItem blog={blog} key={blog._id} />)}
+          <MapBlogs blogs={blogs} />
         </BasePage>
       </div>
     </BaseLayout>

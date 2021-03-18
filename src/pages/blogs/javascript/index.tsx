@@ -8,41 +8,36 @@ import { IBlog } from "@/types/interfaces";
 import { Row, Col, Container } from "reactstrap";
 import BlogItem from "@/components/blog-view/BlogItem";
 import { getPostsByField } from "@/helpers/markdownBlogs";
+import MapBlogs from "@/components/blog-view/MapBlogs";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();
 
   return (
-    <BaseLayout navClass="transparent" loading={loading} user={userData}>
+    <BaseLayout
+      className="blog-listing-page"
+      navClass="transparent"
+      loading={loading}
+      user={userData}
+    >
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100%",
-          overflowY: "hidden",
+          flexGrow: 1,
         }}
       >
+        <Masthead backgroundColor="#f0db4f">
+          <h1>World of Javacript</h1>
+          <span className="subheading">Javacriptism</span>
+        </Masthead>
         <BasePage
           title="Javascript Blogs - YILMAZ BINGOL"
           className="blog-body"
           metaDescription="javascript blogs"
           noWrapper
         >
-          <Masthead backgroundColor="#f0db4f">
-            <h1>World of Javacript</h1>
-            <span className="subheading">Javacriptism</span>
-          </Masthead>
-          <Container>
-            {" "}
-            <Row>
-              <Col>
-                {blogs &&
-                  blogs.map((blog: IBlog) => (
-                    <BlogItem blog={blog} key={blog._id} />
-                  ))}
-              </Col>
-            </Row>
-          </Container>
+          <MapBlogs blogs={blogs} />
         </BasePage>
       </div>
     </BaseLayout>

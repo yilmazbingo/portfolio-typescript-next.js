@@ -5,6 +5,7 @@ import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
 import BlogItem from "@/components/blog-view/BlogItem";
 import { getPostsByField } from "@/helpers/markdownBlogs";
+import MapBlogs from "@/components/blog-view/MapBlogs";
 
 import { IBlog } from "@/types/interfaces";
 
@@ -29,8 +30,7 @@ const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
           noWrapper
           metaDescription="python blogs Yilmaz Bingol"
         >
-          {blogs &&
-            blogs.map((blog: IBlog) => <BlogItem blog={blog} key={blog._id} />)}
+          <MapBlogs blogs={blogs} />
         </BasePage>
       </div>
     </BaseLayout>
