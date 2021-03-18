@@ -134,11 +134,12 @@ footer {
     h1 {
       text-align: center;
       color: rgb(197, 22, 197);
-      text-transform: capitalize;
-      font-family: Lobster;
+      letter-spacing: 0.3rem;
+
+      text-transform: uppercase;
+      font-family: "MOntserrat";
       font-size: 2rem;
       font-weight: 800;
-      letter-spacing: 0.08rem;
     }
   }
 

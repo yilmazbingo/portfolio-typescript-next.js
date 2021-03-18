@@ -11,7 +11,11 @@ interface AvatarProps {
 const Avatar: React.FC<AvatarProps> = ({ image, author, date, field }) => {
   return (
     <div className="media avatar-box mb-2">
-      <img className="mr-2" src={image} alt={`${author} blog`} />
+      <img
+        className="mr-2"
+        src={image ? image : "/images/me.jpg"}
+        alt={`${author} blog`}
+      />
       <div className="media-body align-self-center">
         <h5 className="mt-0 mb-0 title">{author}</h5>
         <p className="mt-0 subtitle">{moment(date).format("LLLL")}</p>

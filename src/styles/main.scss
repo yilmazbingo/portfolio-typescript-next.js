@@ -53,11 +53,18 @@ body {
 .clickable {
   cursor: pointer;
 }
-.contaner {
-  margin: 0;
-}
 
 code {
   // background-color: black;
   color: rgb(192, 8, 63);
+}
+
+@media only screen and (max-width: 760px) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .col {
+    margin-top: 1rem;
+  }
 }

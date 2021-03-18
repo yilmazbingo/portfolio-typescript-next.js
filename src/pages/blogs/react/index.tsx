@@ -6,6 +6,7 @@ import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import { IBlog } from "@/types/interfaces";
 import { FaReact } from "react-icons/fa";
+import { getPostsByField } from "@/helpers/markdownBlogs";
 
 import BlogApi from "@/lib/api/blogs";
 
@@ -44,6 +45,9 @@ const ReactBlogs: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
 
 export async function getStaticProps() {
   const { data }: { data: IBlog[] } = await new BlogApi().getById("react");
+  const markDownPosts = getPostsByField("react");
+
+  const allBlogs = [...markDownPosts, ...data];
 
   return {
     props: { blogs: data },

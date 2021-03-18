@@ -10,6 +10,9 @@ export interface IBlog {
   updatedAt: Date;
   author: { name: string };
   field: string;
+  isFeatured?: string;
+  isMarkdown?: boolean;
+  image?: string;
 }
 export interface IUserBlogs {
   blog: IBlog;

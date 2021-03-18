@@ -5,9 +5,11 @@ import { useGetUser } from "@/actions/user";
 import BlogHeader from "@/components/blog-view/BlogHeader";
 import Avatar from "@/components/blog-view/Avatar";
 import BlogApi from "@/lib/api/blogs";
-import { IUserBlogs, IBlog, IUser } from "@/types/interfaces";
+import { IBlog, IUser, IUserBlogs } from "@/types/interfaces";
 import ReadOnlyView from "@/components/blog-editor/ReadOnlyView";
+import { getPostData, getPostsFiles } from "@/helpers/markdownBlogs";
 import { Container, Row, Col } from "reactstrap";
+import PostContent from "@/components/blog-view/MarkdownPost";
 
 interface BlogDetailProps {
   blog: IBlog;
@@ -23,7 +25,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
   return (
     <BaseLayout user={data} loading={loading} noSideBar className="blog-slug">
       <BasePage
-        title={`${blog.title} - YILMAZ BINGOL`}
+        title={` ${blog.title}  - YILMAZ BINGOL`}
         // metaDescription={blog.subTitle}
         className="blog-slug-page"
         noWrapper
@@ -36,9 +38,11 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
           date={blog.createdAt}
           field={blog.field}
         />
-        {/* <SlateView initialContent={blog.content} /> */}
-
-        <ReadOnlyView initialContent={blog.content} />
+        {blog.isMarkdown ? (
+          <PostContent blog={blog} />
+        ) : (
+          <ReadOnlyView initialContent={blog.content} />
+        )}
       </BasePage>
     </BaseLayout>
   );
@@ -46,16 +50,30 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
 
 export async function getStaticPaths() {
   const { data }: { data: IUserBlogs[] } = await new BlogApi().getAll();
+  const postFilenames = getPostsFiles();
+  const markdownPosts = postFilenames.map((filename) => getPostData(filename));
+  const markdownPaths = markdownPosts.map((blog) => ({
+    params: { slug: blog.slug },
+  }));
+  console.log("markdownPaths", markdownPaths);
   const paths = data.map(({ blog }) => ({ params: { slug: blog.slug } }));
-  return { paths, fallback: false };
+  const allPaths = [...markdownPaths, ...paths];
+  console.log("paths", paths);
+  return { paths: allPaths, fallback: false };
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const {
-    data: { blog, author },
-  } = await new BlogApi().getBySlug(params.slug);
+  const { data } = await new BlogApi().getBySlug(params.slug);
+  const { blog, author } = data;
 
-  console.log("blog", blog);
+  if (!data.blog) {
+    const markdownPost = getPostData(params.slug);
+    console.log("markdownPost", markdownPost);
+    return {
+      props: { blog: markdownPost, author: markdownPost.author },
+      revalidate: 1000,
+    };
+  }
   return { props: { blog, author }, revalidate: 1000 };
 }
 

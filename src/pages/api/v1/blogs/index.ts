@@ -7,7 +7,7 @@ export default async function createBlog(
   res: NextApiResponse
 ) {
   try {
-    const session = await auth0.getSession(req);
+    const session = await auth0.getSession(req, res);
     const accessToken = session?.accessToken;
     let json: any;
     if (accessToken) {

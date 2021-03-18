@@ -8,8 +8,11 @@ import ShowCase from "@/components/home-components/ShowCase";
 import Skills from "@/components/home-components/Skills";
 import Typed from "@/components/home-components/Typed";
 import FloadingBoxAnime from "@/components/FloadingBoxesAnim";
+import FeaturedPosts from "@/components/home-components/FeaturedPosts";
+import { getFeaturedPosts } from "@/helpers/markdownBlogs";
+import { IBlog } from "@/types/interfaces";
 
-const Index = () => {
+const Index: React.FC<{ posts: IBlog[] }> = ({ posts }) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const { data, loading } = useGetUser();
   // if our component rerendered for some reason flipInterval.current will be untouched
@@ -62,6 +65,7 @@ const Index = () => {
           </div>
           <ShowCase />
         </section>
+        <FeaturedPosts posts={posts} />
         <Skills />
         <ContactForm />
       </BasePage>
@@ -70,3 +74,9 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getStaticProps() {
+  const posts = getFeaturedPosts();
+
+  return { props: { posts } };
+}

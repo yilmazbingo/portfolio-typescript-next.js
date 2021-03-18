@@ -8,7 +8,7 @@ export default async function getUserBlogs(
 ) {
   try {
     // const { accessToken } = await auth0.getSession(req);
-    const session = await auth0.getSession(req);
+    const session = await auth0.getSession(req, res);
     const accessToken = session?.accessToken;
     let json: any;
     if (accessToken) {

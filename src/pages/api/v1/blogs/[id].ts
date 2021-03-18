@@ -15,7 +15,7 @@ export default async function handleBlog(
 
   if (req.method === "PATCH") {
     try {
-      const session = await auth0.getSession(req);
+      const session = await auth0.getSession(req, res);
       const accessToken = session?.accessToken;
       console.log("req.query id in patch blog api", req.query.id);
       const json = await new BlogApi(accessToken).update(

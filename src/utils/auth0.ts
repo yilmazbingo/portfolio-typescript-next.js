@@ -1,31 +1,32 @@
 import { initAuth0 } from "@auth0/nextjs-auth0";
-import { ISignInWithAuth0 } from "@auth0/nextjs-auth0/dist/instance";
+import { SignInWithAuth0 } from "@auth0/nextjs-auth0/dist/instance";
 import { NextApiRequest, NextApiResponse } from "next";
 import { IUser } from "@/types/interfaces";
-import { IClaims } from "@auth0/nextjs-auth0/dist/session/session";
-console.log(" process.env.AUTH0_REDIRECT_URI", process.env.AUTH0_REDIRECT_URI);
+import { Claims } from "@auth0/nextjs-auth0/dist/session/session";
+console.log(" process.env.AUTH0_REDIRECT_URI", process.env.AUTH0_DOMAIN);
 
 // this executed only on server, and env's from en.local is loaded to server
-const auth0: ISignInWithAuth0 = initAuth0({
-  domain: process.env.AUTH0_DOMAIN!,
-  clientId: process.env.AUTH0_CLIENT_ID!,
+const auth0: SignInWithAuth0 = initAuth0({
+  baseURL: process.env.BASE_URL,
+  secret: process.env.AUTH0_COOKIE_SECRET!,
+  issuerBaseURL: process.env.AUTH0_DOMAIN!,
+  clientID: process.env.AUTH0_CLIENT_ID!,
   clientSecret: process.env.AUTH0_CLIENT_SECRET!,
-  scope: "openid profile",
+  authorizationParams: {
+    scope: "openid profile email",
+    audience: process.env.AUTH0__AUDIENCE,
+  },
+  routes: {
+    callback: process.env.AUTH0_REDIRECT_URI!,
+    postLogoutRedirect: "/",
+  },
   // The audience of a token is the intended recipient of the token.
-  audience: process.env.AUTH0__AUDIENCE,
-  redirectUri: process.env.AUTH0_REDIRECT_URI!,
-  postLogoutRedirectUri: process.env.AUTHO_POST_LOGOUT_REDIRECT_URI!,
   session: {
-    cookieSecret: process.env.AUTH0_COOKIE_SECRET!,
-    cookieLifetime: 60 * 60 * 8,
-    storeAccessToken: true,
-    // // (Optional) Store the refresh_token in the session. Defaults to false.
-    // storeRefreshToken: false,
+    rollingDuration: 60 * 60 * 24,
+    absoluteDuration: 60 * 60 * 24 * 7,
   },
-  oidcClient: {
-    httpTimeout: 25000,
-    clockTolerance: 10000,
-  },
+  httpTimeout: 25000,
+  clockTolerance: 60,
 });
 export default auth0;
 
@@ -33,7 +34,7 @@ export default auth0;
 //   return user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role);
 // };
 
-export const isAuthorized = (user: IClaims, role: string) => {
+export const isAuthorized = (user: Claims, role: string) => {
   // debugger;
   return (
     user &&
@@ -51,7 +52,7 @@ export const authorizeUser = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  const session = await auth0.getSession(req);
+  const session = await auth0.getSession(req, res);
   if (!session || !session.user) {
     res.writeHead(302, {
       Location: "/api/v1/login",
@@ -70,7 +71,7 @@ export const withAuth = (getData: Function) => (role: string) => async ({
   req: NextApiRequest;
   res: NextApiResponse;
 }) => {
-  const session = await auth0.getSession(req);
+  const session = await auth0.getSession(req, res);
   if (
     !session ||
     !session.user ||

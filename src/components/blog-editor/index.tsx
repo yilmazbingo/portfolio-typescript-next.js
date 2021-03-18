@@ -56,7 +56,7 @@ const MyEditor: React.FC<MyEditorProps> = ({
   const renderElement = useCallback((props) => <Element {...props} />, []);
   const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
   const editor = useMemo(
-    () => withEmbeds(withLinks(withHistory(withReact(createEditor())))),
+    () => withLinks(withHistory(withReact(createEditor()))),
     []
   );
 

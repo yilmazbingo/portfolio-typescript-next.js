@@ -11,6 +11,9 @@ import { deserialize } from "./functions";
 import Element from "./Element";
 import Leaf from "./Leaf";
 import { withLinks } from "./LinkButton";
+import { withEmbeds } from "./EmbedVideo";
+// import { withHistory } from "slate-history";
+
 // initialContent comes from db as string
 interface SlateViewProps {
   initialContent: string;
@@ -20,6 +23,11 @@ const ReadOnlyView: React.FC<SlateViewProps> = ({ initialContent }) => {
   // If i did not pass the generic type, I would get "Argument of type 'Node[]' is not assignable to parameter of type 'SetStateAction<never[]>'" because [] would be treated as never[]
   const [value, setValue] = useState<Node[]>([]);
   const editor = useMemo(() => withLinks(withReact(createEditor())), []);
+  // const editor = useMemo(
+  //   () => withEmbeds(withLinks(withReact(createEditor()))),
+  //   []
+  // );
+
   const renderElement = useCallback((props) => <Element {...props} />, []);
   const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
 
@@ -35,7 +43,7 @@ const ReadOnlyView: React.FC<SlateViewProps> = ({ initialContent }) => {
   }, [initialContent]);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", paddingLeft: "3rem" }}>
       <Slate
         editor={editor}
         value={value}

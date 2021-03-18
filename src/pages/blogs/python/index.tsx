@@ -4,6 +4,7 @@ import BaseLayout from "@/components/layout/BaseLayout";
 import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
 import BlogItem from "@/components/blog-view/BlogItem";
+import { getPostsByField } from "@/helpers/markdownBlogs";
 
 import { IBlog } from "@/types/interfaces";
 
@@ -38,10 +39,10 @@ const Javascript: React.FC<{ blogs: IBlog[]; result: any }> = ({ blogs }) => {
 
 export async function getStaticProps() {
   const { data }: { data: IBlog[] } = await new BlogApi().getById("python");
-  // const result = await new BlogApi().getById("python");
-
+  const markDownPosts = getPostsByField("python");
+  const allBlogs = [...markDownPosts, ...data];
   return {
-    props: { blogs: data },
+    props: { blogs: allBlogs },
     // Error: The `unstable_revalidate` property is available for general use. Please use `revalidate` instead.
     revalidate: 1,
   };

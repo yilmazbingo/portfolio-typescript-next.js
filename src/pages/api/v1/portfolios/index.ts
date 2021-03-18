@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import PortfolioApi from "@/lib/api/portfolios";
 import auth0 from "@/utils/auth0";
-import { ISession } from "@auth0/nextjs-auth0/dist/session/session";
 import { AxiosResponse } from "axios";
 
 export default async function createPortfolio(
@@ -11,7 +10,7 @@ export default async function createPortfolio(
   let json: AxiosResponse | undefined = undefined;
 
   try {
-    const session = await auth0.getSession(req);
+    const session = await auth0.getSession(req, res);
     const accessToken = session?.accessToken;
     console.log(accessToken);
     if (accessToken) {

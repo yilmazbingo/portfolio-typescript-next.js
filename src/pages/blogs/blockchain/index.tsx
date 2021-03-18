@@ -5,6 +5,8 @@ import Masthead from "@/components/shared/Masthead";
 import BlogApi from "@/lib/api/blogs";
 import { IBlog } from "@/types/interfaces";
 import BlogItem from "@/components/blog-view/BlogItem";
+import { postsDirectory } from "@/helpers/markdownBlogs";
+import { getPostsByField } from "@/helpers/markdownBlogs";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: dataUser, loading } = useGetUser();
@@ -36,8 +38,12 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
 
 export async function getStaticProps() {
   const { data }: { data: IBlog[] } = await new BlogApi().getById("blockchain");
+  const markDownPosts = getPostsByField("blockchain");
+
+  const allBlogs = [...markDownPosts, ...data];
+
   return {
-    props: { blogs: data },
+    props: { blogs: allBlogs },
     revalidate: 1,
   };
 }

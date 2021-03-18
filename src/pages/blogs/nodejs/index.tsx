@@ -6,6 +6,7 @@ import BlogApi from "@/lib/api/blogs";
 import { useGetBlog } from "@/actions/blogs";
 import { IBlog } from "@/types/interfaces";
 import BlogItem from "@/components/blog-view/BlogItem";
+import { getPostsByField } from "@/helpers/markdownBlogs";
 
 const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const { data: userData, loading } = useGetUser();
@@ -46,8 +47,12 @@ const Javascript: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
 
 export async function getStaticProps() {
   const { data }: { data: IBlog[] } = await new BlogApi().getById("nodejs");
+  const markDownPosts = getPostsByField("nodejs");
+
+  const allBlogs = [...markDownPosts, ...data];
+
   return {
-    props: { blogs: data },
+    props: { blogs: allBlogs },
     revalidate: 1,
   };
 }
