@@ -32,6 +32,6 @@ BASE_URL=http://localhost:3000
 
 NOTE: serverless functions are in src/pages/api and they wont be part of bundle
 
-### Api server of this project:
+### Api server of this project
 
 https://github.com/yilmazbingo/portfolio-nodeServer-typescript
