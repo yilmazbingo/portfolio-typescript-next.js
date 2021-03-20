@@ -6,7 +6,7 @@ createdAt: "2021-2-15"
 updatedAt: "2021-2-15"
 field: "python"
 image: "/images/featured/iterators.jpg"
-isFeatured: false
+isFeatured: true
 author:
   name: "yilmazbingol"
   picture: ""
@@ -117,7 +117,7 @@ When we iterate over iterators, python first calls the **iter** and then calls t
 ## Some of Python's Buuilt-in iterators and iterables
 
 - **range**
-  It is an iterable meaning that it has ****iter**** method returns an iterator.
+  It is an iterable meaning that it has \***\*iter\*\*** method returns an iterator.
 
 ```py
 range_10=range(10)
@@ -133,7 +133,7 @@ We can test that it is not an iterator
 '__next__' in dir(range_10)
 ```
 
-We are asking if ****next**** is in the attributes list of range_10. Result is `False`
+We are asking if \***\*next\*\*** is in the attributes list of range_10. Result is `False`
 
 "range" function use lazy evaluation. Lazy evaluation is when evaluating a value is deferred until it is actually requested. When we execute range(10) Python does not pre-compute a "list" of all the elements in the range. Instead it uses lazy evluation and the iterator computes and returns elements one at a time.
 
