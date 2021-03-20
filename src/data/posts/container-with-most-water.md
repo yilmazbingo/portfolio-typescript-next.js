@@ -1,8 +1,9 @@
 ---
 _id: "container"
 title: "Container With Most Water"
-createdAt: "2021-10-16"
-updatedAt: "2021-10-16"
+createdAt: "2021-03-18T19:30:59.611+00:00"
+updatedAt: "2021-03-18T19:30:59.611+00:00"
+
 field: "algorithms"
 image: "/images/featured/water.jpg"
 isFeatured: true

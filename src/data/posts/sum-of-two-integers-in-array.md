@@ -1,6 +1,6 @@
 ---
 _id: "angu"
-title: "Sum of 2 integers in an array, with Javascript and Python"
+title: "Sum of 2 integers in an array"
 createdAt: "2021-3-16"
 updatedAt: "2021-3-16"
 field: "algorithms"
