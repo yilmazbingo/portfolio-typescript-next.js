@@ -14,7 +14,7 @@ author:
 isMarkdown: true
 ---
 
-You are given an array of positive integers where each integer represents the height of a vertical line on a chart. Find two lines which together with the x-axis forms a container that would hold the greatest amount of water. Return the area of water it would hold.
+    You are given an array of positive integers where each integer represents the height of a vertical line on a chart. Find two lines which together with the x-axis forms a container that would hold the greatest amount of water. Return the area of water it would hold.
 
 imagine you are given this array.`[1,8,6,2,9,4]`. Each element maps to its correspondig line in order. Our goal is picking two lines that would form a container with the bottom x-axis that hold certain area of water. In this case, greates are would be between 8 and 9. What we have to imagine is that if water were to be poured into this, it would fill up a certain amount of water, which is equal to the shaded area. The area goes up to the 8 because the water will spill over after above 8. We need to return the area that this container holds. area would be 24. When we calculate the width, we consider each element is 1 unit away from previous one.
 
