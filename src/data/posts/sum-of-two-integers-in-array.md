@@ -1,8 +1,8 @@
 ---
 _id: "angu"
 title: "Sum of 2 integers in an array, with Javascript and Python"
-createdAt: "2021-10-16"
-updatedAt: "2021-10-16"
+createdAt: "2021-3-16"
+updatedAt: "2021-3-16"
 field: "algorithms"
 image: "/images/posts/google-two-sum.png"
 isFeatured: true

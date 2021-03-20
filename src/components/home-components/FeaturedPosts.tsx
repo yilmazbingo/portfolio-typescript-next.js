@@ -35,7 +35,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <h1 style={{ textAlign: "center", color: "black" }}>
+          <h1 style={{ textAlign: "center", color: "white" }}>
             FEATURED POSTS
           </h1>
         </div>

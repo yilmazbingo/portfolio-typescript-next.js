@@ -2,8 +2,8 @@
 id: "algo2"
 slug: "iterators-on-python"
 title: "Iterators on Python"
-createdAt: "2021-2-15"
-updatedAt: "2021-2-15"
+createdAt: "2021-2-13"
+updatedAt: "2021-2-13"
 field: "python"
 image: "/images/featured/iterators.jpg"
 isFeatured: true
@@ -13,14 +13,14 @@ author:
 isMarkdown: true
 ---
 
-Iteration is taking each item from a collection of items. That collection does not need to be indexed. For example, sets in python are not indexable, but they are iterable. Just imagine you have a bucket of items and you are just randomly picking an item out of the bucket.
+Iteration is taking each item from a collection of items. That collection does not need to be indexed. For example, sets in python are not indexable, but we can iterate over sets. Just imagine you have a bucket of items and you are just randomly picking an item out of the bucket.
 
 ```py
      my_set={'a','b','c','d'}
      for item in my_set:
         print(item)
 
-    {'b','d','a','c'} # items are not printed in order
+    {'b','d','a','c'} # Note items are not printed in order
 ```
 
 To iterate over collections, we need to implement a method like `getme_next_item()` to get the next item. After creating this method, we will encounter three issues to solve:
@@ -48,7 +48,7 @@ sq=Square()
 sq.next_()
 ```
 
-Let's start to solve the first issue: We specify the size of the collection when we create the instance and we raise `StopIteration` if we call `next_` too many times.
+Let's start to solve the first issue: We specify the size of the collection when we create the instance, then we keep track of how many times we called `next_`. If we call `next_` too many times we raise `StopIteration`.
 
 ```py
     class Square:
@@ -65,11 +65,11 @@ Let's start to solve the first issue: We specify the size of the collection when
                 return result
 ```
 
-Now when we create a new instance of Square, we will pass "length", so if we call `next_` more than "length" times, we raise StopIteration.
+Now when we create a new instance of Square, we will pass "length" argument, so if we call `next_` more than "length" times, we raise StopIteration.
 
 ![stop iteration in python iterable](stop-iteration.png)
 
-We tackled the first issue, but we still cannot iterate using for loops and once the iteration start we cannot restart it becasue it will raise StopIteration after we call more than length times.
+We tackled the first issue, but we still cannot iterate using for loops and once the iteration start we cannot restart it because it will raise StopIteration after we call more than length times.
 
 Before we proceed, let's write our class in a pythonic way. In current implementation calling `sq.next_()` is annoying. Python has built in `__next__` function and when you call this on an object, it is going to call the special method, `__next__` inside the object. Similar to `next`, python also has `len`, which will invokes the `__len__` method of the object.
 
@@ -78,7 +78,7 @@ class Square:
     def __init__(self, length):
         self.length = length
         self.i = 0
-
+    # next(instance) will invoke this
     def __next__(self):
         if self.i >= self.length:
             raise StopIteration
@@ -86,7 +86,7 @@ class Square:
             result = self.i ** 2
             self.i += 1
             return result
-
+    # len(instance) will invoke this
     def __len__(self):
         return self.length
 ```
@@ -96,7 +96,7 @@ class Square:
     next(sq)  # this will return the next item.
 ```
 
-let's tackle the second issue., how are we going to use **for**.
+let's tackle the second issue. How are we going to iterate using **for**.
 
 ### Iterator Protocol
 
@@ -147,7 +147,7 @@ If we closely look at the Square class, it does two things. It mainstains the co
 
 ### Consuming Iterators Manually
 
-We do not have to use for or comprehensions to iterate over iterators. As I showed up, for loop calls the **iter** first and then calls the **next**, we can call those manually
+We do not have to use for or comprehensions to iterate over iterators. As I showed above, for loop calls the **iter** first and then calls the **next**, we can call those manually
 
 ```py
 i="I am an iterator"
@@ -162,3 +162,11 @@ next(iter_i)
 next(iter_i)
     'a'
 ```
+
+```
+
+
+
+```
+
+Next ----> [iterables on python](https://bingolyilmaz.com/blogs/iterables-on-python)

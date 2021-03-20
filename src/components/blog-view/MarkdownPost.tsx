@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import { Content } from "mdast";
 
-// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
@@ -80,7 +79,7 @@ const PostContent: React.FC<PostContent> = ({ blog }) => {
       <Row>
         <Col>
           <article style={{ paddingLeft: "2rem" }}>
-            <ReactMarkdown skipHtml renderers={customRenderers as any}>
+            <ReactMarkdown renderers={customRenderers as any}>
               {blog.content}
             </ReactMarkdown>
           </article>
