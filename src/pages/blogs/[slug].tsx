@@ -55,10 +55,8 @@ export async function getStaticPaths() {
   const markdownPaths = markdownPosts.map((blog) => ({
     params: { slug: blog.slug },
   }));
-  console.log("markdownPaths", markdownPaths);
   const paths = data.map(({ blog }) => ({ params: { slug: blog.slug } }));
   const allPaths = [...markdownPaths, ...paths];
-  console.log("paths", paths);
   return { paths: allPaths, fallback: false };
 }
 
@@ -68,7 +66,6 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   if (!data.blog) {
     const markdownPost = getPostData(params.slug);
-    console.log("markdownPost", markdownPost);
     return {
       props: { blog: markdownPost, author: markdownPost.author },
       revalidate: 1000,

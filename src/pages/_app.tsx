@@ -7,12 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "@/styles/main.scss";
 
 // import "normalize.css/normalize.css";
-console.log(
-  "env variables",
-  process.env.AUTH0_DOMAIN,
-  process.env.AUTH0_REDIRECT_URI,
-  process.env.AUTHO_POST_LOGOUT_REDIRECT_URI
-);
+
 const App = ({ Component, pageProps }: AppProps) => (
   <Component {...pageProps} />
 );
