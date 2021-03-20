@@ -6,7 +6,7 @@ createdAt: "2021-2-15"
 updatedAt: "2021-2-15"
 field: "python"
 image: "/images/featured/iterators.jpg"
-isFeatured: true
+isFeatured: false
 author:
   name: "yilmazbingol"
   picture: ""
