@@ -45,9 +45,13 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
               <Col key={post._id} xs="auto" md={3}>
                 {" "}
                 <Link href={`/blogs/${post.slug}`}>
-                  <a>
+                  <a style={{ borderRadius: "1rem" }}>
                     <ListGroup style={{ marginBottom: "2rem" }}>
-                      <ListGroup.Item style={{ backgroundColor: "blue" }}>
+                      <ListGroup.Item
+                        style={{
+                          backgroundColor: "blue",
+                        }}
+                      >
                         <Image
                           fluid
                           src={post.image}

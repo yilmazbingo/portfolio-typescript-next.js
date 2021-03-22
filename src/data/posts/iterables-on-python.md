@@ -13,7 +13,7 @@ author:
 isMarkdown: true
 ---
 
-On the [iterators on python post](coding-bitcoin-in-javascript-part-1), We saw that an iterator is an object that implements
+On the [iterators on python post](iterators-on-python), We saw that an iterator is an object that implements
 
     __iter__ → returns the object itself
     __next__ → returns the next element
@@ -209,3 +209,5 @@ Instead, we need to iterate through the iterator and put it into something like 
     (4, 'o'),
     (5, 'n')]
   ```
+
+Next ----> [Generators on python](generators-on-python)
