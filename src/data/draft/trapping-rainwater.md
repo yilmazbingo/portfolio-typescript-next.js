@@ -21,9 +21,7 @@ Width of each bar is one, that means that the only distance between elements is 
 
 ![trapping rainwater algorightm by yilmaz bingol](trapping-rainwater-2.png)
 
-As you can see, we just have to count the bluw blocks. In total we have 8 blocks.
-
-This is very creative problem, I wonder who created this question. Unlike other problems, this question looks simple but coding part is challenging. Let's consider the edge cases:
+As you can see, we just have to count the blue blocks. In total we have 8 blocks.
 
 1- Do the left and right sides of the graph count as walls?
 No, sides are not walls. There is no water is trapped on the left side
@@ -35,8 +33,6 @@ No
 
 Let's think about a logical solution. Given this array [0,1,0,2,1,0,3,1,0,1,2],
 
-Our question is not a max-value question. We just have to find the total amount of water that gets trapped. First step is to find the left wall and right wall, then we will be analyzing what is there between the left wall and right wall. We know that left and right sides are not wall, so we have to skip the first "0"s and last "0"s.
+I will be using two pointer technique, one pointer in the beginning of the array, and second one at the end of the array. The key thing in two pointer how to decide under which condition which pointer will be moving first.
 
-To find the left side wall, we simply start from the beginning of the array, it is 0, we skip this, we move to value 1. We dont immediately count 1 as our left value. We look at the next value, if next value is greater than 1, we skip 1 because no vater will be trapped between 1 and next value. If next value is less than 1, we count value 1 as our left wall.
-
-To find the right side wall, start from the end of the array. It's 2, we look at the next value if it is greater than 2 or less than 2. Since it is less than 2, we count 2 as our right wall.
+Water must be surrounded by 2 buildings on its left and right.

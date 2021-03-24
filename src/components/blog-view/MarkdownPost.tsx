@@ -79,7 +79,10 @@ const PostContent: React.FC<PostContent> = ({ blog }) => {
       <Row>
         <Col>
           <article style={{ paddingLeft: "2rem" }}>
-            <ReactMarkdown renderers={customRenderers as any}>
+            <ReactMarkdown
+              renderers={customRenderers as any}
+              className="markdown-paragraph"
+            >
               {blog.content}
             </ReactMarkdown>
           </article>
