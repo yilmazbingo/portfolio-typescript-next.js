@@ -18,7 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({ image, author, date, field }) => {
       />
       <div className="media-body align-self-center">
         <h5 className="mt-0 mb-0 title">{author}</h5>
-        <p className="mt-0 subtitle">{moment(date).format("LLLL")}</p>
+        <p className="mt-0 subtitle">{moment(new Date(date)).format("LLLL")}</p>
       </div>
       <div className="algorithm-lang">{field}</div>
     </div>

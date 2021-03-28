@@ -6,12 +6,6 @@ const app = next({ dev });
 const handle = app.getRequestHandler(); // this will handle the requests
 
 app.prepare().then(() => {
-  console.log(
-    "env variables",
-    process.env.AUTH0_DOMAIN,
-    process.env.AUTH0_REDIRECT_URI,
-    process.env.AUTHO_POST_LOGOUT_REDIRECT_URI
-  );
   const server = express();
 
   server.all("*", (req: Request, res: Response) => {

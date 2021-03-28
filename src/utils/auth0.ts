@@ -3,7 +3,6 @@ import { SignInWithAuth0 } from "@auth0/nextjs-auth0/dist/instance";
 import { NextApiRequest, NextApiResponse } from "next";
 import { IUser } from "@/types/interfaces";
 import { Claims } from "@auth0/nextjs-auth0/dist/session/session";
-console.log(" process.env.AUTH0_REDIRECT_URI", process.env.AUTH0_DOMAIN);
 
 // this executed only on server, and env's from en.local is loaded to server
 const auth0: SignInWithAuth0 = initAuth0({
