@@ -2,8 +2,8 @@
 id: "algo2"
 slug: "iterables-on-python"
 title: "Iterables on Python"
-createdAt: "2021-2-15"
-updatedAt: "2021-2-15"
+createdAt: ""2021-03-16T14:30:59.611+00:00""
+updatedAt: ""2021-03-16T14:30:59.611+00:00""
 field: "python"
 image: "/images/featured/iterators.jpg"
 isFeatured: false
