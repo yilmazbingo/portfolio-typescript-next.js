@@ -1,8 +1,8 @@
 ---
 _id: "kth-largest"
 title: "k'th Largest Element in Unsorted Array"
-createdAt: ""2021-04-1T19:33:59.611+00:00""
-updatedAt: ""2021-04-1T19:33:59.611+00:00""
+createdAt: "2021-04-1T19:33:59.611+00:00"
+updatedAt: "2021-04-1T19:33:59.611+00:00"
 field: "algorithms"
 image: "/images/posts/google-two-sum.png"
 isFeatured: false

@@ -6,7 +6,7 @@ createdAt: "2021-03-25T19:12:59.611+00:00"
 updatedAt: "2021-03-25T19:30:59.611+00:00"
 field: "algorithms"
 image: "/images/featured/bitcoin.jpg"
-isFeatured: true
+isFeatured: false
 author:
   name: "yilmazbingol"
   picture: ""

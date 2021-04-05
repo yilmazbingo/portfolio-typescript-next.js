@@ -1,8 +1,8 @@
 ---
 _id: "angu"
 title: "Sum of 2 integers in an array"
-createdAt: ""2021-03-14T19:30:59.611+00:00""
-updatedAt: ""2021-03-14T19:30:59.611+00:00""
+createdAt: "2021-03-14T19:30:59.611+00:00"
+updatedAt: "2021-03-14T19:30:59.611+00:00"
 field: "algorithms"
 image: "/images/posts/google-two-sum.png"
 isFeatured: true
