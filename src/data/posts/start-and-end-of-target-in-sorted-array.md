@@ -1,8 +1,8 @@
 ---
 _id: "angu"
 title: "Start and End of Target in Sorted Array"
-createdAt: "2021-03-14T19:30:59.611+00:00"
-updatedAt: "2021-03-14T19:30:59.611+00:00"
+createdAt: "2021-04-6T21:12:29.611+00:00"
+updatedAt: "2021-04-6T21:30:59.611+00:00"
 field: "algorithms"
 image: "/images/posts/google-two-sum.png"
 isFeatured: false
@@ -17,17 +17,19 @@ Given an array of integers sorted in ascending order, return the starting and en
 
        [1,3,5,5,5,5,8,9]
 
-If our target is 5, the answer would be [2,5]. 2 is the index of first 5 and 5 would be the index of last 5.
+If our target is 5, the answer would be [2,5]. 2 is the index of the first 5 and 5 would be the index of last 5.
 
 Since we are given array as sorted, it will be better to implement binary search instead of linear search.
 
 ## Binary Search
 
-If we have a sorted array, we are able to do **binary search**. We initialize two pointers, one points to the first element of array and second one points to the last element of array. Using two pointers, we calculate the third pointer which points to the element that in the middle of array. I name it "mid element".
+If we have a sorted array, we are able to do **binary search**. We initialize two pointers, one points to the first element of array and second one points to the last element of array. Using two pointers, we calculate the third pointer which points to the element that in the middle of array. Name this element "mid element" and its index "midIndex".
 
-      midIndex=(right+left)/2
+```js
+midIndex = Math.floor((right + left) / 2);
+```
 
-if the element that we are searching is at this index, we are done. If not, we check if target element is on the right side or on the left side of "mid element". Since array is sorted, if the target element is greater than "mid elment", it means target element is on the right side of mid element, otherwise it is on the left side.
+If the element that we are searching is at this index, we are done. If not, we check if target element is on the right side or on the left side of "mid element". Since array is sorted, if the target element is greater than "mid elment", it means target element is on the right side of mid element, otherwise it is on the left side.
 
       [firstElement, , , , mid, , , , , , ,lastElement]
 
@@ -39,17 +41,19 @@ if target element is on the right side of mid element, we will be searching out 
 
      [mid+1, , , , , , lastElement]
 
-We recursively keep dividing the array and search the target element till the "mid pointer" points to the target value or we have only one element in the array.
+We recursively keep dividing the array and search the target element till the "mid pointer" points to the target value.
 
 This algorithm has O(Log(n)) time complexity becasue everytime we perform binary search on our search space, we were removing half of tha search space. Since we are dividing our search space by 2, its base value should be 2 but since we are ignoring the constants in complexity analysis, we always take base value as 10.
 
 Log(n) tells us how many times we divide our search space till we find the target value. Let's say we have an array with 16 elements. If we linearly search for the target, in worst scenario, target value will be at the end so we would be doing 16 operations to find the element and its time complexity would be O(N).
 
-If we implment binary search, worst case scenario would be we find the element when only 1 element left in the array
+If we implement binary search, worst case scenario would be if we find the element when only 1 element left in the array
 
        16 -> 8 -> 4 -> 2 -> 1
 
-How many times we performed division till we reach target? in this case it is 4=Log2(16)=Log2(2^4)
+How many times we performed division till we reach target? In this case it is
+
+                4=Log2(16)=Log2(2^4)
 
 Coding of binary search is very simple:
 
@@ -80,13 +84,13 @@ Now, we learnt how binary search works, we are going to find the target value wi
 const firstPos = binarySearch(nums, 0, nums.length - 1, target); // index 4
 ```
 
-Then, to find the starting index, we perform another binary search from the beginning of array till the "firstPos" index:
+Now `firstPos=4` To find the starting index for 5, we perform another binary search from the beginning of array till the "firstPos" index:
 
        [1,3,5,5,5]
 
-       We cannot perform linear search because if the entire array consists of 5, we would get O(N) time complexity.
+       We cannot perform linear search because if the entire array consists of 5's, we would get O(N) time complexity.
 
-We do not know how many binary search we are going to perform, so each time we find a new index, we assign in to "temp1" till binary search returns -1.
+We do not know how many binary search we are going to perform, so each time we find a new index, we assign in to "temp1" till binary search returns -1. I initialized "temp1" and "temp2" becasue If I was returning "start_position" and "end_position", their last value would be -1 inside while loop, so I would get return value as [-1,-1]
 
 To find the ending index, we perform another set of binary search starting from "firstPos+1" till the end of array.
 
@@ -115,6 +119,7 @@ const searchRange = function (nums, target) {
   startPosition = temp1;
   while (endPosition !== -1) {
     temp2 = endPosition;
+    // if started from endPosition I might fall in an infinite loop
     endPosition = binarySearch(nums, endPosition + 1, nums.length - 1, target);
   }
   endPosition = temp2;
@@ -137,4 +142,26 @@ def binary_search(A,left,right,target):
         else:
             right=mid-1
     return -1
+```
+
+```py
+from typing import List
+
+def search(A:List[int],target:int)->List[int]:
+    if len(A)==0:
+        return [-1,-1]
+    first_position=binary_search(A,0,len(A)-1,target)
+    if first_position==-1:
+        return [-1,-1]
+    start_position=first_position
+    end_position=first_position
+    start=-1
+    end=-1
+    while start_position!=-1:
+        start=start_position
+        start_position=binary_search(A,0,start_position-1,target)
+    while end_position!=-1:
+        end=end_position
+        end_position=binary_search(A,end_position+1,len(A)-1,target)
+    return [start,end]
 ```
