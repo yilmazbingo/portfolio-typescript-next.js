@@ -35,10 +35,13 @@ const CodeCell = () => {
       <div
         style={{
           height: "100%",
+          // display: "flex",
+          // flexDirection: "row",
+          marginTop: "calc(3.5vw + 3.5vh)",
+          // paddingTop: "1rem",
+          // flexWrap: "wrap",
           display: "flex",
           flexDirection: "row",
-          marginTop: "calc(3.5vw + 3.5vh)",
-          flexWrap: "wrap",
         }}
       >
         <Resizable direction="horizontal">

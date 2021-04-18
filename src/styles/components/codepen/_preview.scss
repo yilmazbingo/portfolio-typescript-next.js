@@ -10,14 +10,16 @@
   width: 100%;
 }
 /* when we drag, react sizeable adds "react-draggable-transparent-selection" on body */
+// :after adds a fake element to DOM. this will show on top of the iframe. we want to show this only when user drags the resize handler
 .react-draggable-transparent-selection .preview-wrapper:after {
-  content: "";
   position: absolute;
   top: 0;
   right: 0;
+  content: "";
   bottom: 0;
   left: 0;
-  opacity: 0;
+  // opacity: 0;
+  background-color: red;
 }
 
 .preview-error {
