@@ -7,6 +7,7 @@ interface PreviewProps {
 
 // iframe posts message
 // event.preventDefault(), prevents error to be thrown to console.
+// "message" from parent is being sent here to preview
 const html = `
  <html>
  <head>

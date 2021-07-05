@@ -21,12 +21,14 @@ interface CodeEditorProps {
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
   const editorRef = useRef<any>();
+
   // this is our gate into the editor
   const onEditorMount: OnMount = (editor, _monaco) => {
     const babelParse = (code: string) =>
       parse(code, { sourceType: "module", plugins: ["jsx"] });
 
     editorRef.current = editor;
+    // editor.getValue will be set in state in parent component
     editor.onDidChangeModelContent(() => onChange(editor.getValue()));
     editor.getModel()?.updateOptions({ tabSize: 2 });
     const highlighter = new jsxHighlighter(
