@@ -53,12 +53,12 @@ const Index: React.FC<{ posts: IBlog[] }> = ({ posts }) => {
             <div className={`flipper ${isFlipping ? "isFlipping" : ""}`}>
               <div className="front">
                 <div className="image image-1">
-                  <h2 className="frontend">Front End</h2>
+                  <h1 className="frontend">Front End</h1>
                 </div>
               </div>
               <div className="back">
                 <div className="image image-2">
-                  <h2 className="backend"> Back End</h2>
+                  <h1 className="backend"> Back End</h1>
                 </div>
               </div>
             </div>

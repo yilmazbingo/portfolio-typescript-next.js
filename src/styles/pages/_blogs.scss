@@ -13,7 +13,7 @@
 //   background-color: map-get($background-colors, blog-listing-page);
 
 .blog-body {
-  background-color: chartreuse;
+  background-color: rgb(70, 9, 9);
 }
 
 .post-preview {
@@ -22,7 +22,7 @@
   border-radius: 2rem;
   padding-left: 2rem;
   > a {
-    color: #750b0b;
+    color: #ac6767;
     &:focus,
     &:hover {
       text-decoration: none;
