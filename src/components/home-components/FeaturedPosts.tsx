@@ -18,7 +18,7 @@ interface FeaturedPostsProps {
 
 const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
   return (
-    <div style={{ backgroundColor: "rgb(175, 5, 5)" }}>
+    <div style={{ backgroundColor: "gray" }}>
       <Container
         style={{
           marginBottom: "2rem",
