@@ -3,6 +3,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaStackOverflow } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
+import { TiSocialYoutubeCircular } from "react-icons/ti";
 
 const SideNav = () => {
   return (
@@ -39,6 +40,13 @@ const SideNav = () => {
             href="https://twitter.com/bingolyilmazNy"
           >
             <FiTwitter />
+          </a>
+          <a
+            target="_blank"
+            className="side-nav content icons youtube"
+            href="https://www.youtube.com/channel/UCiWhssryq8kgsFwFB5NrWSQ"
+          >
+            <TiSocialYoutubeCircular />
           </a>
         </div>
       </div>

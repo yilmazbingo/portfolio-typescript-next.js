@@ -83,6 +83,21 @@
           }
         }
       }
+
+      &.youtube {
+        svg {
+          height: 5rem !important;
+          width: 5rem !important;
+          // color: rgb(235, 152, 0);
+          color: map-get($icon-colors, youtube);
+          &:hover {
+            background-color: white;
+          }
+          &:active {
+            color: red;
+          }
+        }
+      }
     }
   }
 }
