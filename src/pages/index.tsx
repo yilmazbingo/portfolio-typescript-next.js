@@ -26,6 +26,7 @@ const Index: React.FC<{ posts: IBlog[] }> = ({ posts }) => {
     flipInterval.current = setInterval(() => {
       setIsFlipping((prevFlipping) => !prevFlipping);
     }, 10000);
+    console.log("filipinterval", flipInterval.current);
   };
   const { width, height, ref } = useResizeDetector();
   return (

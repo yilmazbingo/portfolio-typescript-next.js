@@ -36,9 +36,9 @@ const Header: React.FC<HeaderProps> = ({ user, loading, className }) => {
               <NavItem className="port-navbar-item">
                 <BsNavLink href="/about" title="About" />
               </NavItem>
-              <NavItem className="port-navbar-item">
+              {/* <NavItem className="port-navbar-item">
                 <BsNavLink href="/portfolios" title="Portfolios" />
-              </NavItem>
+              </NavItem> */}
               <NavItem className="port-navbar-item">
                 <BsNavLink href="/blogs" title="Blogs" />
               </NavItem>
