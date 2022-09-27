@@ -12,6 +12,10 @@ const App = ({ Component, pageProps }: AppProps) => (
   <Component {...pageProps} />
 );
 
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
 export default App;
 
 //if we call getInitialProps from here, other pages getInitialProps would be invalid. we have to call all other pages getInitialProps here manually
