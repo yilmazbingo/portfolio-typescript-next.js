@@ -10,6 +10,7 @@ const Copyright = () => {
         color: "white",
         bottom: "0",
         width: "100%",
+        position: "absolute",
       }}
     >
       <h4>

@@ -4,6 +4,7 @@ import { FaReact, FaNodeJs, FaPython, FaAngular } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiNodeRed } from "react-icons/si";
 import { FcDataSheet } from "react-icons/fc";
+import Divider from "../home-components/divider";
 
 const BlogTopics = () => {
   return (

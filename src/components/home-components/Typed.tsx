@@ -1,6 +1,5 @@
 import React from "react";
 import Typed from "react-typed";
-import Divider from "./divider";
 
 const TypedAnimation = () => {
   const roles = [

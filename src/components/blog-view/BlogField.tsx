@@ -1,5 +1,6 @@
 import React, { useState, FC } from "react";
 import { Alert } from "reactstrap";
+import Divider from "../home-components/divider";
 
 interface BlogFieldProps {
   onChange: (field: string) => void;

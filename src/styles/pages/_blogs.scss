@@ -7,11 +7,12 @@
 }
 
 // Blog LISTING!
-// .blog-listing-page {
-//   min-height: 100vh !important;
-//   width: 100%;
-//   background-color: map-get($background-colors, blog-listing-page);
-
+.blog-listing-page {
+  min-height: 100vh !important;
+  width: 100%;
+  bottom: 0;
+  background-color: map-get($background-colors, blog-listing-page);
+}
 .blog-body {
   background-color: rgb(70, 9, 9);
 }
