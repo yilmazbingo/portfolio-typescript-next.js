@@ -5,22 +5,22 @@ const Copyright = () => {
   return (
     <div
       style={{
-        backgroundColor: "black",
+        backgroundColor: "#272323",
         textAlign: "center",
         color: "white",
         bottom: "0",
         width: "100%",
         position: "absolute",
+        height: "2rem",
       }}
     >
-      <h4>
+      <h3 style={{ marginTop: "0.75rem" }}>
         Copyrigth{" "}
         <span>
-          {" "}
           <FaRegCopyright />
-        </span>{" "}
+        </span>
         Yilmaz Bingol. All rights reserved
-      </h4>
+      </h3>
     </div>
   );
 };
