@@ -11,6 +11,7 @@ import FloadingBoxAnime from "@/components/FloadingBoxesAnim";
 import FeaturedPosts from "@/components/home-components/FeaturedPosts";
 import { getFeaturedPosts } from "@/helpers/markdownBlogs";
 import { IBlog } from "@/types/interfaces";
+import Divider from "@/components/home-components/divider";
 
 const Index: React.FC<{ posts: IBlog[] }> = ({ posts }) => {
   const [isFlipping, setIsFlipping] = useState(false);
@@ -32,6 +33,7 @@ const Index: React.FC<{ posts: IBlog[] }> = ({ posts }) => {
   return (
     <BaseLayout user={data} loading={loading} className="home-layout">
       {/* <FloadingBoxAnime /> */}
+
       <BasePage
         className="home"
         indexPage

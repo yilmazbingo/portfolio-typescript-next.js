@@ -1,6 +1,7 @@
 import emailjs from "emailjs-com";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import Divider from "./divider";
 
 const Modal = dynamic(() => import("../Modal"), { ssr: false });
 const ContactForm = () => {
@@ -35,42 +36,47 @@ const ContactForm = () => {
   const closeModal = () => setSubmitted(false);
 
   return (
-    <section id="contact">
-      {submitted && (
-        <Modal title="Email" onCancelModal={closeModal}>
-          <h3>Email is sent</h3>
-        </Modal>
-      )}
-      {error && (
-        <Modal title="Email" onCancelModal={closeModal}>
-          <h3>{error} </h3>
-        </Modal>
-      )}
-      {submitted && window.addEventListener("click", () => setSubmitted(false))}
-      {error && window.addEventListener("click", () => setError(false))}
+    <>
+      <Divider />
 
-      <form className="contact__form" onSubmit={sendEmail}>
-        <input
-          minLength={5}
-          maxLength={20}
-          required
-          type="text"
-          placeholder="Name"
-          // onChange={(event) => setName(event.target.value)}
-        />
-        <input type="email" placeholder="Email" required />
-        <input type="text" placeholder="Subject" required maxLength={24} />
-        <textarea
-          required
-          maxLength={150}
-          minLength={6}
-          name="message"
-          placeholder="Message"
-          // onChange={(event) => setMessage(event.target.value)}
-        ></textarea>
-        <input type="submit" value="Submit" />
-      </form>
-    </section>
+      <section id="contact">
+        {submitted && (
+          <Modal title="Email" onCancelModal={closeModal}>
+            <h3>Email is sent</h3>
+          </Modal>
+        )}
+        {error && (
+          <Modal title="Email" onCancelModal={closeModal}>
+            <h3>{error} </h3>
+          </Modal>
+        )}
+        {submitted &&
+          window.addEventListener("click", () => setSubmitted(false))}
+        {error && window.addEventListener("click", () => setError(false))}
+
+        <form className="contact__form" onSubmit={sendEmail}>
+          <input
+            minLength={5}
+            maxLength={20}
+            required
+            type="text"
+            placeholder="Name"
+            // onChange={(event) => setName(event.target.value)}
+          />
+          <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Subject" required maxLength={24} />
+          <textarea
+            required
+            maxLength={150}
+            minLength={6}
+            name="message"
+            placeholder="Message"
+            // onChange={(event) => setMessage(event.target.value)}
+          ></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </>
   );
 };
 

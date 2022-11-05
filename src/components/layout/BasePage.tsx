@@ -35,6 +35,7 @@ const BasePage: React.FC<BasePageProps> = (props) => {
         metaDescription={metaDescription}
         canonicalPath={canonicalPath}
       ></HeadTags>
+
       <div
         className={`${pageType} ${className}`}
         style={{ display: "flex", flexDirection: "column", flex: "1" }}

@@ -16,7 +16,7 @@ section#skills {
     font-size: 3rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
-    color: white;
+    color: rgb(255, 251, 7);
     font-family: Montserrat-Italic;
     text-decoration: underline;
   }
@@ -43,7 +43,7 @@ section#skills {
   vertical-align: middle;
   height: 2rem;
   border-radius: 1rem 0 0 1rem;
-  background-color: rgb(255, 251, 7);
+  background-color: purple;
 }
 
 .skills__coding--progress__html {
@@ -74,6 +74,20 @@ section#skills {
   }
 }
 
+.skills__coding--progress__next {
+  animation: coding-next 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-next {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 95%;
+  }
+}
+
 .skills__coding--progress__react {
   animation: coding-3 4s infinite cubic-bezier(1, 0, 0, 1);
 }
@@ -88,7 +102,7 @@ section#skills {
   }
 }
 
-.skills__coding--progress__angular {
+.skills__coding--progress__solidity {
   animation: coding-4 4s infinite cubic-bezier(1, 0, 0, 1);
 }
 
@@ -98,7 +112,7 @@ section#skills {
   }
 
   100% {
-    width: 80%;
+    width: 90%;
   }
 }
 

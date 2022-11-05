@@ -1,5 +1,6 @@
 import React from "react";
 import Typed from "react-typed";
+import Divider from "./divider";
 
 const TypedAnimation = () => {
   const roles = [
@@ -8,36 +9,17 @@ const TypedAnimation = () => {
     "Solidity",
     "Next.js",
     "Node.js",
-    "Nest.js",
     "React.js",
     "React-Native",
-    "Kotlin",
-    "Angular",
+    "Rust",
+    "Solana",
     "UX Design",
-    "Rx.js",
     "Redux",
-    "NgRx",
-    "Webpack",
-    "EsBuild",
     "TypeScript",
     "GraphQL",
     "Python",
     "Django",
-    "Flask",
-    "C#",
-    "Unity 3D",
-    "MySQL",
-    "PostgreSQL",
-    "SQLite",
-    "Firebase",
-    "Mongo DB",
-    "Docker",
-    "Kubernetes",
-    "AWS",
-    "SCSS",
-    "SEO",
-    "Git",
-    "Asana",
+    "Microservices",
   ];
   return (
     <Typed

@@ -10,6 +10,7 @@ import {
   Card,
   Container,
 } from "react-bootstrap";
+import Divider from "./divider";
 import Link from "next/link";
 
 interface FeaturedPostsProps {
@@ -18,7 +19,9 @@ interface FeaturedPostsProps {
 
 const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
   return (
-    <div style={{ backgroundColor: "gray" }}>
+    <div style={{ backgroundColor: "#336699" }}>
+      <Divider />
+
       <Container
         style={{
           marginBottom: "2rem",
@@ -33,7 +36,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <h1 style={{ textAlign: "center", color: "white" }}>
+          <h1 style={{ textAlign: "center", color: " rgb(255, 251, 7)" }}>
             FEATURED POSTS
           </h1>
         </div>
@@ -80,6 +83,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
             ))}
         </Row>
       </Container>
+      <Divider />
     </div>
   );
 };
