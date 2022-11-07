@@ -62,7 +62,7 @@ const AboutMe = () => {
                 Brooklyn College. I am currently working as a software engineer
                 and freelance developer.
               </h2>
-              <h2 style={{ marginTop: "3rem" }}>
+              <h2 style={{ marginTop: "3rem", marginBottom: "3rem" }}>
                 I created this platform because throughout my career, I have
                 worked towards advancing my technical knowledge and the ability
                 to explain my knowledge clearly and in detail to a broad
