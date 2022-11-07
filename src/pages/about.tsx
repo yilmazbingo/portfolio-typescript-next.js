@@ -42,24 +42,27 @@ const AboutMe = () => {
               <h4 className={`subtitle ${createFadeInClass()}`}>
                 To About Page
               </h4>
-              <p className={`subsubTitle ${createFadeInClass()}`}>
+              {/* <p className={`subsubTitle ${createFadeInClass()}`}>
                 Feel free to read short description about me.
-              </p>
+              </p> */}
             </div>
           </Col>
           <Col md="6">
             <div className={`${createFadeInClass()}`}>
-              <h2>
+              <h2 style={{ marginTop: "10rem" }}>
                 My three major interests and passions are Computer Science,
-                Maths and Finance.
+                Maths and Finance. While my interest are many my true passion is
+                DeFi. Being able to advance in a field where mathematics,
+                finance, and computer science meet to provide something new for
+                this ever evolving world.
               </h2>{" "}
-              <h2>
+              <h2 style={{ marginTop: "3rem" }}>
                 I have a bachelor degree of Mathematics and Computer Science.
                 Also I completed my master in Global Business and Finance from
                 Brooklyn College. I am currently working as a software engineer
                 and freelance developer.
-              </h2>{" "}
-              <h2>
+              </h2>
+              <h2 style={{ marginTop: "3rem" }}>
                 I created this platform because throughout my career, I have
                 worked towards advancing my technical knowledge and the ability
                 to explain my knowledge clearly and in detail to a broad

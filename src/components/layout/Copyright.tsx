@@ -11,14 +11,15 @@ const Copyright = () => {
         bottom: "0",
         width: "100%",
         position: "absolute",
-        height: "2rem",
+        height: "3rem",
       }}
     >
-      <h3 style={{ marginTop: "0.75rem" }}>
+      <h3 style={{ marginTop: "0.5rem" }}>
         Copyrigth{" "}
         <span>
           <FaRegCopyright />
         </span>
+        {"  "}
         Yilmaz Bingol. All rights reserved
       </h3>
     </div>
