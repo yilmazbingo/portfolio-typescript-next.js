@@ -2,6 +2,9 @@
   "name": "portfolio-yilmaz-bingol",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.18.0"
+  },
   "scripts": {
     "dev": "ts-node  --project tsconfig.server.json src/server.ts",
     "build": "next build",
