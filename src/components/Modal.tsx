@@ -29,34 +29,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     console.log("containerREf in modal", containerRef.current);
     return () => rootContainer.remove();
   }, [containerRef]);
-  // useEffect(() => {
-  //   containerRef.current
-  //     ? ReactDOM.createPortal(
-  //         // <div className="modal">
-  //         <>
-  //           <header className="modal__header">
-  //             <h1>{props.title}</h1>
-  //           </header>
-  //           <div className="modal__content">{props.children}</div>
-  //           <div className="modal__actions">
-  //             <Button design="danger" mode="flat" onClick={props.onCancelModal}>
-  //               Cancel
-  //             </Button>
-  //             <Button
-  //               mode="raised"
-  //               onClick={props.onAcceptModal}
-  //               disabled={!props.acceptEnabled}
-  //               loading={props.isLoading}
-  //             >
-  //               Accept
-  //             </Button>
-  //           </div>
-  //           {/* </div>, */}
-  //         </>,
-  //         containerRef.current
-  //       )
-  //     : null;
-  // });
+
   return containerRef.current
     ? ReactDOM.createPortal(
         // <div className="modal">

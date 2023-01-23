@@ -24,9 +24,8 @@ export const Button = React.forwardRef(
         reversed: boolean;
       } & BaseProps
     >,
-    ref:
-      | string
-      | RefObject<HTMLSpanElement>
+    ref: // | string
+    | RefObject<HTMLSpanElement>
       | ((instance: OrNull<HTMLSpanElement>) => void)
       | null
       | undefined
