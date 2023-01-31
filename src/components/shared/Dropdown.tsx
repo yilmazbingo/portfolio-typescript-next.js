@@ -38,7 +38,7 @@ export default class PortButtonDropdown extends Component<
     });
   }
 
-  // TODO: Pass on item ID, don't use INDEX
+  // TODO: Pass on item ID, don't use Index
   renderMenu(items: Item[]) {
     return (
       <DropdownMenu>
