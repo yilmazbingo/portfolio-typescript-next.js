@@ -55,7 +55,8 @@ export async function getStaticPaths() {
   const markdownPaths = markdownPosts.map((blog) => ({
     params: { slug: blog.slug },
   }));
-  const paths = data.map(({ blog }) => ({ params: { slug: blog.slug } }));
+  const paths =
+    data && data.map(({ blog }) => ({ params: { slug: blog.slug } }));
   const allPaths = [...markdownPaths, ...paths];
   return { paths: allPaths, fallback: false };
 }
