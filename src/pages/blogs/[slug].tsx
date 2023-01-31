@@ -49,15 +49,15 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, author }) => {
 };
 
 export async function getStaticPaths() {
-  const { data }: { data: IUserBlogs[] } = await new BlogApi().getAll();
+  // const { data }: { data: IUserBlogs[] } = await new BlogApi().getAll();
   const postFilenames = getPostsFiles();
   const markdownPosts = postFilenames.map((filename) => getPostData(filename));
   const markdownPaths = markdownPosts.map((blog) => ({
     params: { slug: blog.slug },
   }));
-  const paths =
-    data && data.map(({ blog }) => ({ params: { slug: blog.slug } }));
-  const allPaths = [...markdownPaths, ...paths];
+  // const paths =
+  //   data && data.map(({ blog }) => ({ params: { slug: blog.slug } }));
+  const allPaths = [...markdownPaths];
   return { paths: allPaths, fallback: false };
 }
 
