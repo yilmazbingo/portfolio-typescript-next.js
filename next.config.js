@@ -2,7 +2,7 @@
 
 const path = require("path");
 
-// import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
+// import MonacoWebpackPlugin from "monaco-editor-webpack-plugin"
 
 module.exports = {
   webpack: (config) => {
