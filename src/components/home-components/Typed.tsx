@@ -17,7 +17,6 @@ const TypedAnimation = () => {
     "TypeScript",
     "GraphQL",
     "Python",
-    "Django",
     "Microservices",
   ];
   return (
