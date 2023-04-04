@@ -27,13 +27,13 @@ const SideNav = () => {
           >
             <FaStackOverflow />
           </a>
-          {/* <a
+          <a
             target="_blank"
             className="side-nav content icons linkedin"
             href="https://www.linkedin.com/in/yilmaz-bingol-8b52a961/"
           >
             <FaLinkedinIn />
-          </a> */}
+          </a>
           <a
             target="_blank"
             className="side-nav content icons twitter"
