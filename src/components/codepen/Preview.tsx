@@ -46,9 +46,7 @@ const Preview: React.FC<PreviewProps> = ({ code, error }) => {
       iframe.current.contentWindow.postMessage(code, "*");
     }, 50);
     // 50 ms will make sure browser has enough time to update the sourcedoc and setup a message listener inside there,watch for postMessage attempt
-    console.log("err", error);
   }, [code]);
-  console.log("err", error);
 
   return (
     // iframe was not receiving drag event so we wrap it with div
