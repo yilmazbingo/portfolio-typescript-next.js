@@ -22,6 +22,7 @@ const CodeCell = () => {
     const timer = setTimeout(async () => {
       const output = await bundle(input);
       setCode(output.code);
+      console.log("error in codepen", output?.error);
       setError(output.error);
     }, 1000);
     // nest time userEffect is called this will be called automatically
