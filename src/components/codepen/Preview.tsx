@@ -49,7 +49,7 @@ const Preview: React.FC<PreviewProps> = ({ code, error }) => {
   }, [code]);
 
   return (
-    // iframe was not receiving drag event so we wrap it with div
+    // iframe was not receiving drag event so wrap it with div
     <div className="preview-wrapper">
       <iframe
         srcDoc={html}

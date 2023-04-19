@@ -30,6 +30,8 @@ const CodeCell = () => {
     };
   }, [input]);
 
+  console.log("code in codecell", code);
+
   return (
     <Resizable direction="vertical">
       <div
