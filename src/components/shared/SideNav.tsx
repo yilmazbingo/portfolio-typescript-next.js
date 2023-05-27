@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaStackOverflow } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaPinterest } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { TiSocialYoutubeCircular } from "react-icons/ti";
 
@@ -13,6 +13,13 @@ const SideNav = () => {
           <img src="/images/logo.jpg" alt="logo" />
         </div>
         <div className="side-nav content icons">
+          <a
+            target="_blank"
+            className="side-nav content icons pinterest"
+            href="https://www.pinterest.com/zeyinstore/"
+          >
+            <FaPinterest />
+          </a>
           <a
             target="_blank"
             className="side-nav content icons github"

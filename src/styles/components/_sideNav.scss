@@ -54,6 +54,19 @@
           }
         }
       }
+      &.pinterest {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          background-color: map-get($icon-bg-colors, pinterest);
+          color: map-get($icon-colors, pinterest);
+          border-radius: 10%;
+          &:hover {
+            background-color: #e60023;
+            color: white;
+          }
+        }
+      }
 
       &.stackoverflow {
         svg {
