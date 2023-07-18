@@ -54,6 +54,26 @@
           }
         }
       }
+      &.instagram {
+        svg {
+          height: 4rem !important;
+          width: 4rem !important;
+          background: radial-gradient(
+            circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285aeb 90%
+          );
+          // color: map-get($icon-colors, linkedin);
+          border-radius: 10%;
+
+          &:hover {
+            color: rgb(25, 25, 109);
+          }
+        }
+      }
       &.pinterest {
         svg {
           height: 4rem !important;
