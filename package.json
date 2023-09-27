@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "v14.15.1"
+    "node": "v18.12.1 "
   },
   "scripts": {
     "dev": "ts-node  --project tsconfig.server.json src/server.ts",
